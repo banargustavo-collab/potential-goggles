@@ -6,7 +6,8 @@
       "Bash(php --version:*)",
       "Bash(explorer.exe index.html)",
       "Bash(cmd.exe /c start index.html)",
-      "Bash(npm install)"
+      "Bash(npm install)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
