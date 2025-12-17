@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(xcopy:*)",
+      "Bash(php --version:*)",
+      "Bash(explorer.exe index.html)",
+      "Bash(cmd.exe /c start index.html)",
+      "Bash(npm install)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
