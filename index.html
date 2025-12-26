@@ -192,7 +192,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <!-- LIGHTBOX UNIVERSAL -->
 <div id="universalLightbox" class="fixed inset-0 bg-black/95 z-[9999] hidden items-center justify-center cursor-zoom-out">
   <img id="lightboxImage" src="" alt="Zoom" class="max-w-full max-h-full object-contain transition-all duration-300">
-  <video id="lightboxVideo" src="" class="max-w-full max-h-full object-contain transition-all duration-300" controls playsinline webkit-playsinline preload="auto" autoplay style="display: none;"></video>
+  <video id="lightboxVideo" src="" class="max-w-full max-h-full object-contain transition-all duration-300" controls playsinline webkit-playsinline preload="auto" style="display: none;"></video>
   <button id="closeLightboxBtn" class="absolute top-4 right-4 text-white text-5xl font-thin hover:text-gray-400">&times;</button>
 
 </div>
@@ -240,21 +240,31 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     if (isVideo) {
       lightboxImg.style.display = 'none';
       lightboxVid.style.display = 'block';
-      lightboxVid.muted = false;
-      lightboxVid.src = src;
+
+      // Reset video completely
+      lightboxVid.pause();
+      lightboxVid.removeAttribute('src');
       lightboxVid.load();
-      setTimeout(() => {
+
+      // Set new source
+      lightboxVid.src = src;
+      lightboxVid.muted = false;
+      lightboxVid.currentTime = 0;
+
+      // Wait for loadedmetadata before playing
+      lightboxVid.addEventListener('loadedmetadata', function onMetadata() {
+        lightboxVid.removeEventListener('loadedmetadata', onMetadata);
         const playPromise = lightboxVid.play();
         if (playPromise !== undefined) {
-          playPromise.then(() => {
-            console.log('Video playing');
-          }).catch(err => {
-            console.log('Autoplay prevented, trying muted:', err);
+          playPromise.catch(err => {
+            console.log('Trying muted autoplay');
             lightboxVid.muted = true;
             lightboxVid.play();
           });
         }
-      }, 100);
+      });
+
+      lightboxVid.load();
     } else {
       lightboxVid.style.display = 'none';
       lightboxImg.style.display = 'block';
