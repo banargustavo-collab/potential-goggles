@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="pt-br"><!-- Mirrored from kitfranciny.online/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Aug 2025 13:38:15 GMT --><head>
   <meta charset="UTF-8">
   <title>
-    TikTok Shop 
+    Colgate Luminous White - Caneta Clareadora - TikTok Shop
  </title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -174,21 +174,25 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <div class="relative w-full max-w-5xl mx-auto my-6">
   <div class="swiper main-swiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw4qux18.webp" alt="Imagem 1"></div>
-      <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mc7poupaywo04c.webp" alt="Imagem 2"></div>
-      <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw7jztb5.webp" alt="Imagem 3"></div>
-      <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m0elkzludcww33.webp" alt="Imagem 4"></div>
-      <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw65fd69.webp" alt="Imagem 5"></div>
-      <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-m2qmyu1gi6th31.webp" alt="Imagem 6"></div>
+      <div class="swiper-slide"><img src="images/imagem1.png" alt="Colgate Luminous White - Embalagem"></div>
+      <div class="swiper-slide"><img src="images/imagem2.png" alt="Colgate Luminous White - Instruções"></div>
+      <div class="swiper-slide"><img src="images/imagem3.png" alt="Colgate Luminous White - Caneta Fechada"></div>
+      <div class="swiper-slide"><img src="images/imagem4.png" alt="Colgate Luminous White - Caneta Aberta"></div>
+      <div class="swiper-slide"><img src="images/imagem5.png" alt="Colgate Luminous White - Como Usar"></div>
+      <div class="swiper-slide"><img src="images/imagem6.png" alt="Colgate Luminous White - 2 Passos"></div>
+      <div class="swiper-slide"><img src="images/imagem7.png" alt="Colgate Luminous White - Antes e Depois"></div>
+      <div class="swiper-slide"><img src="images/imagem8.png" alt="Colgate Luminous White - Clinicamente Comprovado"></div>
+      <div class="swiper-slide"><img src="images/imagem9.png" alt="Colgate Luminous White - Remove 15 Anos de Manchas"></div>
     </div>
     <div class="swiper-pagination"></div>
-    <div class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-3 py-1.5 rounded-full z-10 font-medium" id="counter">1/6</div>
+    <div class="absolute bottom-3 right-3 bg-black/70 text-white text-xs px-3 py-1.5 rounded-full z-10 font-medium" id="counter">1/9</div>
   </div>
 </div>
 
 <!-- LIGHTBOX UNIVERSAL -->
 <div id="universalLightbox" class="fixed inset-0 bg-black/95 z-[9999] hidden items-center justify-center cursor-zoom-out">
   <img id="lightboxImage" src="" alt="Zoom" class="max-w-full max-h-full object-contain transition-all duration-300">
+  <video id="lightboxVideo" src="" class="max-w-full max-h-full object-contain transition-all duration-300" controls style="display: none;"></video>
   <button id="closeLightboxBtn" class="absolute top-4 right-4 text-white text-5xl font-thin hover:text-gray-400">&times;</button>
 
 </div>
@@ -225,19 +229,28 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   // === LIGHTBOX UNIVERSAL ===
   const lightbox = document.getElementById('universalLightbox');
   const lightboxImg = document.getElementById('lightboxImage');
+  const lightboxVid = document.getElementById('lightboxVideo');
   const closeBtn = document.getElementById('closeLightboxBtn'); // agora funciona!
   let currentGallery = [];
   let currentIndex = 0;
   let isPanning = false;
   let startX, startY, translateX = 0, translateY = 0;
 
-  function openLightbox(src, gallery = [], index = 0) {
-    lightboxImg.src = src;
+  function openLightbox(src, gallery = [], index = 0, isVideo = false) {
+    if (isVideo) {
+      lightboxImg.style.display = 'none';
+      lightboxVid.style.display = 'block';
+      lightboxVid.src = src;
+    } else {
+      lightboxVid.style.display = 'none';
+      lightboxImg.style.display = 'block';
+      lightboxImg.src = src;
+      lightboxImg.style.transform = 'translate(0px, 0px) scale(1)';
+      lightboxImg.classList.remove('zooming');
+    }
     currentGallery = gallery.length > 0 ? gallery : [src];
     currentIndex = index;
     translateX = translateY = 0;
-    lightboxImg.style.transform = 'translate(0px, 0px) scale(1)';
-    lightboxImg.classList.remove('zooming');
     lightbox.classList.add('show');
     lightbox.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
@@ -250,6 +263,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       document.body.style.overflow = '';
       currentGallery = [];
       lightboxImg.src = '';
+      lightboxVid.src = '';
+      lightboxVid.pause();
     }, 300);
   }
 
@@ -362,7 +377,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
   // === ZOOM NAS AVALIAÇÕES ===
   const attachReviewZoom = () => {
-    document.querySelectorAll('img[src*="susercontent.com"], img[src*="down-br.img"]').forEach((img) => {
+    document.querySelectorAll('img[src*="susercontent.com"], img[src*="down-br.img"], img[src*="images/feedback"]').forEach((img) => {
       if (img.dataset.zoomAttached) return;
       const isCarousel = img.closest('.main-swiper');
       const isModal = img.closest('#meuModal');
@@ -372,7 +387,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       const reviewBlock = img.closest('div');
       if (!reviewBlock) return;
 
-      const reviewImgs = reviewBlock.querySelectorAll('img[src*="susercontent.com"], img[src*="down-br.img"]');
+      const reviewImgs = reviewBlock.querySelectorAll('img[src*="susercontent.com"], img[src*="down-br.img"], img[src*="images/feedback"]');
       const gallery = Array.from(reviewImgs).map(i => i.src);
 
       img.style.cursor = 'zoom-in';
@@ -390,6 +405,26 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
   attachReviewZoom();
   new MutationObserver(attachReviewZoom).observe(document.body, { childList: true, subtree: true });
+
+  // === ZOOM EM VÍDEOS DOS FEEDBACKS ===
+  const attachVideoZoom = () => {
+    document.querySelectorAll('video[src*="videos/feedback"]').forEach((video) => {
+      if (video.dataset.zoomAttached) return;
+
+      video.style.cursor = 'zoom-in';
+      video.classList.add('transition-transform', 'duration-200', 'hover:scale-105');
+      video.dataset.zoomAttached = 'true';
+
+      video.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        openLightbox(video.src, [video.src], 0, true);
+      };
+    });
+  };
+
+  attachVideoZoom();
+  new MutationObserver(attachVideoZoom).observe(document.body, { childList: true, subtree: true });
 </script>
   <!-- Miniaturas -->
   <div class="px-4 pb-4 pt-2" style="display: none;">
@@ -466,7 +501,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <!-- TÍTULO -->
     <div class="px-3 pt-3">
       <p class="text-gray-800 font-medium leading-snug text-[18px]">
-        <span class="Promoção dias das crianças" style="display: inline-block; background: linear-gradient(to right, #f9c2d0, #c2f9f1); padding: 2px 6px; border-radius: 8px; font-weight: bold; font-size: 11px; color: #000; margin-right: 6px;">🎅 PROMOÇÃO DE NATAL </span> Aparelho de Jantar e Chá Porcelana 30 Peças Ryo Maresia Jogo de Pratos e Xícaras Oxford
+        <span class="Promoção dias das crianças" style="display: inline-block; background: linear-gradient(to right, #f9c2d0, #c2f9f1); padding: 2px 6px; border-radius: 8px; font-weight: bold; font-size: 11px; color: #000; margin-right: 6px;">🎅 PROMOÇÃO DE NATAL </span> Colgate Luminous White - Caneta Branqueadora Clareamento Dental - Remove 15 Anos de Manchas
 
       </p>
     </div>
@@ -778,9 +813,9 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <!-- REVIEW 1 -->
     <div class="bg-gray-50 p-4 rounded-lg">
       <div class="flex items-start gap-3 mb-2">
-        <img src="https://down-br.img.susercontent.com/file/br-11134233-7r98o-lxafbqt9zp1ubf_tn" alt="Luh Moraes" class="w-10 h-10 rounded-full object-cover">
+        <img src="images/fotoreginaldosilva.jfif" alt="Reginaldo Silva" class="w-10 h-10 rounded-full object-cover">
         <div>
-          <p class="font-medium text-gray-800">Luh Moraes</p>
+          <p class="font-medium text-gray-800">Reginaldo Silva</p>
           <p class="text-xs text-green-500">há 23 minutos</p>
         </div>
       </div>
@@ -795,14 +830,18 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
       </svg></div>
-      <p class="text-sm text-gray-700 mb-2">Gente estou muito apaixonada, esse conjunto é maravilhoso! Faz muito tempo que estou namorando esse kit, encontrei na loja o melhor custo benefício, veio bem embalado, e a entrega foi super rápida. Nota 1000
+      <p class="text-sm text-gray-700 mb-2">Cara, estou muito satisfeito com essa caneta clareadora! Faz tempo que queria clarear meus dentes e finalmente encontrei um produto que realmente funciona. Em 1 semana já vi diferença, meus dentes estão muito mais brancos! Veio bem embalado e a entrega foi super rápida. Recomendo demais!
 </p>
       <div class="flex gap-2 flex-wrap">
-        <video src="https://down-zl-br.vod.susercontent.com/api/v4/11110103/mms/br-11110103-6kfkr-lzou5smue535a2.16000051725282588.mp4" controls="" class="w-16 h-26 rounded-lg object-cover" controlslist="nodownload" autoplay=""></video>
-        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzou57e5h6bl46.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
-        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzou57e5ikw1bf.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
-        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzou57e5jzgh69.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
-        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzou57e5le0x50.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <div class="relative w-16 h-16 cursor-pointer group" onclick="openLightbox('videos/feedback01.mp4', ['videos/feedback01.mp4'], 0, true)">
+          <video src="videos/feedback01.mp4" class="w-full h-full rounded-lg object-cover" muted playsinline></video>
+          <div class="absolute inset-0 flex items-center justify-center bg-black/30 rounded-lg group-hover:bg-black/40 transition-all">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+        <img src="images/feedbackreginadoimagem.webp" alt="Reginaldo Silva - Feedback" class="w-16 h-16 rounded-lg object-cover">
       </div>
     </div>
 
@@ -828,13 +867,12 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
       </svg></div>
-      <p class="text-sm text-gray-700 mb-2">Aparelho de jantar perfeito! Todas as peças chegaram intactas e muito bem embaladas. É tudo muito lindo, fiquei apaixonada! Entrega rápida. 
-A única observação é que o prato fundo não é muito fundo, mas eu já tinha percebido pelas fotos.
+      <p class="text-sm text-gray-700 mb-2">Produto incrível! A caneta Colgate Luminous White realmente funciona. Em apenas 1 semana já notei meus dentes mais brancos. É super fácil de usar e não causou sensibilidade. Entrega rápida e produto muito bem embalado. Recomendo demais!
 </p>
       <div class="flex gap-2 flex-wrap">
-        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzq1jtaepmhxe1.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
-        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzq1jtayotxx88.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
-        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzq1jtayotvlc1.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <img src="images/feedbackSaraAlbuquerque1.webp" alt="Sara Albuquerque - Feedback 1" class="w-16 h-16 rounded-lg object-cover">
+        <img src="images/feedbackSaraAlbuquerque2.webp" alt="Sara Albuquerque - Feedback 2" class="w-16 h-16 rounded-lg object-cover">
+        <img src="images/feedbackSaraAlbuquerque3.webp" alt="Sara Albuquerque - Feedback 3" class="w-16 h-16 rounded-lg object-cover">
       </div>
     </div>
 
@@ -858,13 +896,19 @@ A única observação é que o prato fundo não é muito fundo, mas eu já tinha
       </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
       </svg></div>
-      <p class="text-sm text-gray-700 mb-2">Conjunto lindo perfeito veio tudo direitinho entrega rápida tudo OK podem comprar sem medo
+      <p class="text-sm text-gray-700 mb-2">Produto perfeito! A caneta Colgate veio tudo direitinho, entrega rápida. Já estou usando há 5 dias e meus dentes já estão mais claros. Super fácil de usar e não dói nada. Podem comprar sem medo!
 
 </p>
       <div class="flex gap-2 flex-wrap">
-        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-m2l73rgw7bphcf.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
-        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-m2l73rgw8q9xb9.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
-        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-m2l73rgwa4ud5a.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <div class="relative w-16 h-16 cursor-pointer group" onclick="openLightbox('videos/feedback03.mp4', ['videos/feedback03.mp4'], 0, true)">
+          <video src="videos/feedback03.mp4" class="w-full h-full rounded-lg object-cover" muted playsinline></video>
+          <div class="absolute inset-0 flex items-center justify-center bg-black/30 rounded-lg group-hover:bg-black/40 transition-all">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+        <img src="images/feedback03.webp" alt="Elane Costa - Feedback" class="w-16 h-16 rounded-lg object-cover">
       </div>
     </div>
 
@@ -888,13 +932,20 @@ A única observação é que o prato fundo não é muito fundo, mas eu já tinha
       </svg><svg fill="#ffa500" height="14" viewBox="0 0 24 24" width="14" class="flex-shrink-0">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
       </svg></div>
-      <p class="text-sm text-gray-700 mb-2">Que luxooooooo.<br>
-Estou apaixonada pelo jogo de jantar.<br>
-Chegaram na data prevista,sem nenhum problema, todas as peças foram muito bem embalado. <br>
-Eu ameiiii o cuidado e capricho com as peças</p>
+      <p class="text-sm text-gray-700 mb-2">Que maravilhaaaa!<br>
+Estou apaixonada por essa caneta clareadora da Colgate.<br>
+Chegou na data prevista, sem nenhum problema, muito bem embalado.<br>
+Em apenas 1 semana já vi resultados incríveis! Meus dentes estão muito mais brancos e brilhantes. Super recomendo!</p>
       <div class="flex gap-2 flex-wrap">
-        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzgotacxf1qt93.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
-        <img src="https://down-br.img.susercontent.com/file/br-11134103-7r98o-lzgotacxggb936.webp" alt="Foto da avaliação" class="w-16 h-16 rounded-lg object-cover">
+        <div class="relative w-16 h-16 cursor-pointer group" onclick="openLightbox('videos/feedbackSofiaDias.mp4', ['videos/feedbackSofiaDias.mp4'], 0, true)">
+          <video src="videos/feedbackSofiaDias.mp4" class="w-full h-full rounded-lg object-cover" muted playsinline></video>
+          <div class="absolute inset-0 flex items-center justify-center bg-black/30 rounded-lg group-hover:bg-black/40 transition-all">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+        <img src="images/feedback04.webp" alt="Sofia Dias - Feedback" class="w-16 h-16 rounded-lg object-cover">
       </div>
     </div>
 
@@ -938,11 +989,11 @@ Eu ameiiii o cuidado e capricho com as peças</p>
     <div class="flex items-center space-x-4 group">
       <!-- Logo com Efeito 3D -->
       <div class="relative">
-        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-50 to-blue-100 p-0.5">
-          <img src="https://down-br.img.susercontent.com/file/br-11134216-7r98o-lxmwyutaf5bz89@resize_w80_nl.webp" alt="JBL Eletronicos Tiktok Shops" class="w-full h-full rounded-full object-cover border-2 border-white shadow-sm transition-transform duration-300 group-hover:scale-105">
+        <div class="w-14 h-14 rounded-full bg-red-600 p-0">
+          <img src="images/logotipocolgate.webp" alt="Colgate Brasil" class="w-full h-full rounded-full object-cover p-1 transition-transform duration-300 group-hover:scale-105">
         </div>
         <!-- Badge de Verificação -->
-        <div class="absolute -bottom-1 -right-1 bg-blue-500 rounded-full p-1 shadow-md">
+        <div class="absolute -bottom-1 -right-1 bg-red-500 rounded-full p-1 shadow-md">
           <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
           </svg>
@@ -952,8 +1003,8 @@ Eu ameiiii o cuidado e capricho com as peças</p>
       <!-- Nome e Produtos -->
       <div class="flex flex-col">
         <div class="flex items-center">
-          <p class="font-bold text-gray-800 text-sm tracking-tight">Amarinne Home</p>
-          <span class="ml-2 bg-blue-100 text-blue-600 text-xs px-2 py-0.5 rounded-full">Loja Verificada</span>
+          <p class="font-bold text-gray-800 text-sm tracking-tight">Colgate Brasil</p>
+          <span class="ml-2 bg-red-100 text-red-600 text-xs px-2 py-0.5 rounded-full">Loja Verificada</span>
         </div>
         <p class="text-xs text-gray-500 flex items-center">
           <span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-1"></span>
@@ -1010,74 +1061,68 @@ Eu ameiiii o cuidado e capricho com as peças</p>
 <section class="max-w-md mx-auto space-y-6">
 <!-- Card da descrição -->
 <article class="bg-white p-5 border border-gray-100 ">
-<h2 class="text-lg font-extrabold text-gray-900 tracking-tight">Aparelho De Jantar e Chá - Modelo Ryo Maresia 30 Peças - Oxford Porcelanas</h2>
+<h2 class="text-lg font-extrabold text-gray-900 tracking-tight">Colgate Luminous White - Caneta Branqueadora para Clareamento Dental</h2>
 
 <!-- Subtitle / destaque -->
-<p class="mt-2 text-sm text-gray-600">O wabi-sabi é um conceito japonês que valoriza o imperfeito, do processo de criação até o seu acabamento. Exaltar o irregular, o impermanente e o incompleto é uma homenagem da linha Ryo à esta sabedoria japonesa. A coleção Ryo Maresia traz uma composição que valoriza a beleza das praias, o toque da areia e o frescor do mar.</p>
+<p class="mt-2 text-sm text-gray-600">Conheça a caneta Colgate Luminous White para clarear os dentes enquanto você dorme. É hora de deixar seu sorriso visivelmente mais branco com a caneta para clareamento dental que remove 15 anos de manchas nos dentes.</p>
 
 <!-- Descrição (colapsável) -->
-<div id="descPreview" class="mt-3 text-sm text-gray-700 max-h-28 overflow-hidden transition-all duration-200" aria-hidden="false">
+<div id="descPreview" class="mt-3 text-sm text-gray-700 transition-all duration-200" aria-hidden="false">
   <p class="mb-2">
-    As peças do aparelho de jantar Ryo Maresia recebem aplicação de esmalte com pigmentação e de um filete reagente aplicado de forma manual garantindo a unicidade de cada peça. A coleção Ryo Maresia dispõe ainda de peças complementares, como canecas, travessas e tigelas para deixar sua mesa mais completa.
+    Este tratamento de clareamento dental funciona continuamente enquanto você dorme, evitando novas manchas e é seguro para o esmalte dentário. Sua fórmula com 3% de peróxido de hidrogênio - mesmo ingrediente utilizado por dentistas - está clinicamente comprovada e apresenta resultados em apenas uma semana (a partir de 1 semana de uso diário. Manchas causadas por alguns alimentos e bebidas).
   </p>
 
 </div>
-<!-- Itens inclusos -->
+<!-- Como usar -->
 <div class="mt-4 pt-4 border-t border-gray-100">
-  <h3 class="text-sm font-semibold text-gray-900">Itens Inclusos</h3>
+  <h3 class="text-sm font-semibold text-gray-900">Como Usar - É Fácil:</h3>
 
-  <ul class="mt-3 space-y-2 text-sm text-gray-700">
+  <ul class="mt-3 space-y-3 text-sm text-gray-700">
     <li class="flex items-start gap-3">
-      <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"></path>
-      </svg>
-      <span>06 Pratos Rasos - 27,5cm;</span>
+      <span class="w-6 h-6 flex-shrink-0 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-xs mt-0.5">1</span>
+      <div>
+        <strong>SEQUE OS DENTES:</strong> Após escovar os dentes, seque-os com um lenço de papel. <em>Dica profissional:</em> Quando seus dentes estão secos, o gel clareador dental adere melhor aos dentes, para um clareamento dental efetivo!
+      </div>
     </li>
     <li class="flex items-start gap-3">
-      <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"></path>
-      </svg>
-      <span>06 Pratos Fundos - 22,5cm de diâmetro e 4,5 cm de altura;</span>
+      <span class="w-6 h-6 flex-shrink-0 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-xs mt-0.5">2</span>
+      <div>
+        <strong>APLIQUE:</strong> Clique o botão da caneta branqueadora até que o gel clareador dental apareça. O primeiro uso pode exigir até 20 cliques. Aplique uma fina camada em cada dente e deixe secar.
+      </div>
     </li>
     <li class="flex items-start gap-3">
-      <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"></path>
-      </svg>
-      <span>06 Pratos de Sobremesas - 21,5cm;</span>
+      <span class="w-6 h-6 flex-shrink-0 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-xs mt-0.5">3</span>
+      <div>
+        <strong>DEIXE AGIR ENQUANTO VOCÊ DORME:</strong> O gel forma uma película concentrada de peróxido de hidrogênio em seus dentes que permanecerá nos dentes durante a noite.
+      </div>
     </li>
     <li class="flex items-start gap-3">
-      <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"></path>
-      </svg>
-      <span>06 Xícaras de Chá - 220ml.</span>
-    </li>
-    <li class="flex items-start gap-3">
-      <svg class="w-5 h-5 flex-shrink-0 text-green-500 mt-0.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 01.023 1.39l-7.5 8a1 1 0 01-1.43.042L3.293 10.7a1 1 0 011.414-1.414l3.268 3.268L15.3 5.32a1 1 0 01.023-1.414z" clip-rule="evenodd"></path>
-      </svg>
-      <span>06 Pires de Chá - 16cm;</span>
+      <span class="w-6 h-6 flex-shrink-0 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-xs mt-0.5">4</span>
+      <div>
+        <strong>ESCOVE OS DENTES:</strong> Ao acordar, escove os dentes com o creme dental clareador Colgate Luminous White Glow e revele seu sorriso mais branco e brilhante.
+      </div>
     </li>
   </ul>
+
+  <p class="mt-3 text-xs text-gray-600"><strong>Dica de limpeza:</strong> Para limpar a caneta, passe uma toalha ou pano seco nas cerdas. Se a ponta endurecer, não enxágue com água. Clique na caneta 2-3 vezes e o novo gel limpará e suavizará as cerdas.</p>
 </div>
 
-<!-- Especificações -->
+<!-- Benefícios -->
 <div class="mt-4 pt-4 border-t border-gray-100">
-  <h3 class="text-sm font-semibold text-gray-900">Especificações</h3>
-        <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw8yk900.webp" alt="Imagem 5"></div>
-        <div class="swiper-slide"><img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw3cahdd.webp" alt="Imagem 6"></div>
-</div>
-
-<!-- Destaques -->
-<div class="mt-4 pt-4 border-t border-gray-100">
-  <h3 class="text-sm font-semibold text-gray-900">Por que escolher o Aparelho de Jantar e Chá Ryo Maresia 30 Peças - Oxford?</h3>
+  <h3 class="text-sm font-semibold text-gray-900">Benefícios da Caneta Colgate Luminous White:</h3>
   <ul class="mt-3 space-y-2 text-sm text-gray-700">
-    <li>✅ Porcelana Premium Oxford – resistente e com acabamento perfeito</li>
-    <li>✅ Wabi-sabi japonês – cada peça única, feita à mão</li>
-    <li>✅ Design Maresia – traz praia, areia e mar para sua mesa</li>
-    <li>✅ 100% micro-ondas e lava-louças – prático todo dia</li>
-    <li>✅ Conjunto completo: 6 rasos 27,5cm, 6 fundos, 6 sobremesa, 6 xícaras 220ml + 6 pires</li>
-    <li>✅ Garantia 90 dias + fabricado no Brasil</li>
+    <li>✅ <strong>CLAREADOR DENTAL FÁCIL E EFICAZ EM CASA:</strong> a caneta branqueadora age desde o primeiro uso para branquear os dentes enquanto você dorme.</li>
+    <li>✅ <strong>REMOVE 15 ANOS DE MANCHAS NOS DENTES:</strong> é o tratamento de clareamento dental mais eficaz de Colgate. Tem alta concentração de peróxido de hidrogênio, mesmo ingrediente utilizado por dentistas.</li>
+    <li>✅ <strong>CLINICAMENTE COMPROVADO:</strong> essa caneta clareadora dental é clinicamente comprovada para mostrar resultados em apenas 1 semana. Use todas as noites para ter melhores resultados.</li>
+    <li>✅ <strong>FÁCIL DE APLICAR:</strong> seque os dentes, clique na caneta clareadora, aplique uma camada do gel clareador nos dentes, deixe secar e durma. Escove os dentes pela manhã para um sorriso mais brilhante.</li>
+    <li>✅ <strong>SECAGEM RÁPIDA:</strong> o gel clareador dental foi desenvolvido para secar rapidamente na superfície do dente.</li>
+    <li>✅ <strong>SEGURO PARA O ESMALTE DENTAL:</strong> desenvolvido para não causar sensibilidade dental.</li>
+    <li>✅ <strong>ÓTIMO RENDIMENTO:</strong> essa caneta clareadora rende até 35 usos noturnos, para que você possa retocar quando precisar.</li>
   </ul>
+
+  <div class="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+    <p class="text-xs text-gray-700"><strong>⚠️ Informações de Segurança:</strong> Realize um teste de contato antes do primeiro uso. Revise cuidadosamente a lista completa de ingredientes, especialmente para usuários com alergias, pele sensível ou para aqueles que estão grávidas, amamentando ou crianças.</p>
+  </div>
 </div>
 
   <!-- Envio -->
@@ -1178,7 +1223,7 @@ Eu ameiiii o cuidado e capricho com as peças</p>
     
     <!-- TOPO: IMAGEM + PREÇO -->
     <div class="flex items-center mb-5">
-      <img id="productImg" src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw4qux18.webp" alt="Produto" class="w-20 h-20 object-cover rounded-lg mr-3">
+      <img id="productImg" src="images/imagem1.png" alt="Produto" class="w-20 h-20 object-cover rounded-lg mr-3">
       <div>
         <div class="text-rose-500 font-bold text-xl"><strong style="padding: 4px 8px; background:#ff0050; color:white; border-radius:8px; font-size:12px;">-85%</strong> R$ 48,59</div>
         <div class="text-gray-500 line-through text-xs">R$ 589,43</div>
@@ -1200,7 +1245,7 @@ Eu ameiiii o cuidado e capricho com as peças</p>
 <script>
 // ===== 24 CORES COM LINKS INDIVIVUAIS =====
 const colorVariants = [
-  { key: '30 Peças Ryo Maresia Jogo de Pratos e Xícaras Oxford', img: 'https://down-br.img.susercontent.com/file/br-11134207-7r98o-marffcpw4qux18.webp', link: 'https://pagamento-tiktokshop.compra-segura.app/checkout/v3/f3moGjLmJKZnkRF6sD60' }
+  { key: 'Colgate Luminous White - Caneta Branqueadora', img: 'images/imagem1.png', link: 'https://pagamento-tiktokshop.compra-segura.app/checkout/v3/f3moGjLmJKZnkRF6sD60' }
 ];
 
 let selectedColor = null;
