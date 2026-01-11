@@ -1,0 +1,37 @@
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/up1"
+  to = "/up1/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/up2"
+  to = "/up2/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/up3"
+  to = "/up3/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/up4"
+  to = "/up4/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/up5"
+  to = "/up5/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/up6"
+  to = "/up6/index.html"
+  status = 200
+
+[build]
+  publish = "."
