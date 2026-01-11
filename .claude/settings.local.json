@@ -9,7 +9,12 @@
       "Bash(npm install)",
       "Bash(git init:*)",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: Add TikTok Bonus landing page with 6 upsells\n\n- Add main landing page with rewards system\n- Add package.json with live-server for development\n- Add 6 upsell pages (up1-up6) with independent assets\n- Add .gitignore to exclude node_modules\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git config:*)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(gh --version:*)"
     ],
     "deny": [],
     "ask": []

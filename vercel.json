@@ -9,6 +9,7 @@
     { "source": "/up3", "destination": "/up3/index.html" },
     { "source": "/up4", "destination": "/up4/index.html" },
     { "source": "/up5", "destination": "/up5/index.html" },
-    { "source": "/up6", "destination": "/up6/index.html" }
+    { "source": "/up6", "destination": "/up6/index.html" },
+    { "source": "/back", "destination": "/back/index.html" }
   ]
 }
