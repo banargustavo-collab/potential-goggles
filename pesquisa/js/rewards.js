@@ -3,7 +3,7 @@
  */
 
 // Total reward to distribute across all questions
-const TOTAL_REWARD = 559.51;
+const TOTAL_REWARD = 2834.72;
 const NUM_QUESTIONS = 11;
 
 // Create audio element for money sound

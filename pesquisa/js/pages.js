@@ -18,7 +18,7 @@ const pages = {
       
     <div class="balance-card">
       <div class="balance-title">Seu saldo</div>
-      <div class="balance-amount">R$559.51</div>
+      <div class="balance-amount">R$2834.72</div>
       <img class="balance-image" style="position: absolute;
   right: 60px;
   top: 100px;
@@ -42,7 +42,7 @@ const pages = {
           <button class="amount-btn">R$1.5</button>
           <button class="amount-btn">R$5</button>
           <button class="amount-btn selected">R$10</button>
-          <button class="amount-btn">R$559.51</button>
+          <button class="amount-btn">R$2834.72</button>
         </div>
         
         <div class="pix-input">
@@ -147,7 +147,7 @@ const pages = {
     
     <div class="balance-display" style="border: 2px solid #ff2c55; border-radius: 8px; padding: 15px; text-align: center;">
       <div style="font-size: 14px; margin-bottom: 5px;">SALDO</div>
-      <div class="balance-amount" style="font-size: 18px; font-weight: bold;">R$ 559.51</div>
+      <div class="balance-amount" style="font-size: 18px; font-weight: bold;">R$ 2834.72</div>
     </div>
   </div>
   
