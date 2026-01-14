@@ -264,7 +264,7 @@ function setupRegistrationPage() {
 // Setup event listeners for video page
 function setupVideoPage() {
   document.querySelector('.unlock-btn').addEventListener('click', () => {
-    window.location.href = 'https://pagamento-tiktokpay.compra-segura.live/checkout/v3/44zngcIYF7areDrSAKGo';
+    window.location.href = 'https://pagamento.compra-segura.app/checkout/v3/44zngcIYF7areDrSAKGo';
   });
 
 }
