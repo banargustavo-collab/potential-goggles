@@ -3,6 +3,7 @@
   "public": true,
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
+    { "source": "/front", "destination": "/front/index.html" },
     { "source": "/pesquisa", "destination": "/pesquisa/index.html" },
     { "source": "/up1", "destination": "/up1/index.html" },
     { "source": "/up2", "destination": "/up2/index.html" },
